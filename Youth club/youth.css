@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #fff;
+}
+
+nav{
+    padding: 10px 40px;
+    text-align: right;
+}
+
+.logo{
+    float: left;
+}
+
+
+nav ul li{
+    display: inline-block;
+    margin: 0 15px;
+    list-style: none;
+    
+}   
+
+nav ul li a{
+    text-decoration: none;
+}
+
+/* HERO SECTION */
+.hero {
+  background: #000;
+  padding: 30px;
+}
+.hero-text {
+  display: block;
+  margin-bottom: 20px;
+}
+.hero-text h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.cta-btn {
+  display: inline-block;
+  background: orange;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.hero-img {
+  background: gray;
+  width: 200px;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  margin-top: 10px;;
+}
+
+/* TRYOUT DETAILS SECTION */
+.tryout-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+.box {
+  background: #111;
+  padding: 15px;
+}
+.box ul {
+  margin-top: 8px;
+}
+.box ul li {
+  margin-bottom: 5px;
+}
+
+/* TABS */
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  padding: 15px;
+  background: #ddd;
+}
+.tab {
+  background: #aaa;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+}
+
+/* FEES TABLE */
+.fees-table {
+  background: #ccc;
+  color: #000;
+  padding: 40px;
+  text-align: center;
+  margin-top: 10px;
+}
