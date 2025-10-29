@@ -4,10 +4,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: orange;
+    --secondary-color: black;
+    --accent-color: #0077c8;
+    --nav-bg: black;
+    --text-color: white;
+    --font-family:"Arial, sans-serif";
+}
+
+
 /* Navigation Bar */
 nav {
     padding: 10px 40px;
-    background-color: #ffffff;
+    background-color: var(--nav-bg);
     overflow: hidden; /* it keeps nav height stable when using floats */
 }
 
@@ -25,7 +35,7 @@ nav {
 
 .nav-links {
     float: right;
-    margin-top: 15px; /* aligns menu with logo */
+    margin-top: 20px; /* aligns menu with logo */
 }
 
 nav ul {
@@ -41,23 +51,46 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
     font-size: 18px;
 }
 
+/*Hero Section */
+.hero-section {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 100px 20px;
+    display: block;
+}
+
+.row{
+    display: inline;
+    margin: 0 15px;
+
+}
+
+.hero-image {
+    height: 50px;
+    width: auto;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
 /* Sponsors Section */
 .sponsors-section {
-    border: 2px solid #0a84d0;
+    border: 2px solid var(--accent-color);
     border-radius: 15px;
     padding: 30px 20px;
     text-align: center;
-    background-color: white;
+    background-color: var(--secondary-color);
     width: 90%;
     margin: 50px auto;
 }
 
 .sponsors-section h2 {
-    color: #0077c8;
+    color: var(--accent-color);
     font-size: 32px;
     margin-bottom: 25px;
 }
@@ -76,7 +109,7 @@ nav ul li a {
 .dot {
     height: 8px;
     width: 8px;
-    background-color: #bbb;
+    background-color: var(--primary-color);
     border-radius: 50%;
     display: inline-block;
     margin: 5px;
