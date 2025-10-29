@@ -1,20 +1,87 @@
-nav{
-    padding: 10px 40px;
-    text-align: right;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.logo{
+/* Navigation Bar */
+nav {
+    padding: 10px 40px;
+    background-color: #ffffff;
+    overflow: hidden; /* it keeps nav height stable when using floats */
+}
+
+/* Logo on the left */
+.logo {
     float: left;
 }
 
+.logo img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
 
-nav ul li{
-    display: inline-block;
-    margin: 0 15px;
+
+.nav-links {
+    float: right;
+    margin-top: 15px; /* aligns menu with logo */
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
     list-style: none;
-    
-}   
+    display: inline-block;
+    margin-left: 20px;
+}
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* Sponsors Section */
+.sponsors-section {
+    border: 2px solid #0a84d0;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: white;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.sponsors-section h2 {
+    color: #0077c8;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.sponsor-logos img {
+    width: 140px;
+    margin: 10px 15px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.dots {
+    margin-top: 15px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.dot.active {
+    background-color: black;
 }
