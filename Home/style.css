@@ -118,3 +118,44 @@ nav ul li a {
 .dot.active {
     background-color: black;
 }
+
+.container{
+    border: 2px solid black;
+    padding: 2%;
+    margin: 2% 0%;
+    width:100%
+  }
+
+  /*Congrats section styling */
+  .congrats-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5%;
+  }
+
+  .congrats-container div{
+    border: 1px solid black;
+    padding: 2%;
+    font-size: 1.5em;
+    text-align: left;
+  }
+  /*News and events styling*/
+  .news-events-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+  }
+
+  .news-events-container div {
+    border: 1px solid black;
+    padding: 3%;
+    font-size: 1.5em;
+    text-align: left;
+  }
+
+  #news div, #events div {
+    font-size: 1em;
+    margin: 2% 0%;
+    padding: 2%;
+    border: 1px solid grey;
+  }
