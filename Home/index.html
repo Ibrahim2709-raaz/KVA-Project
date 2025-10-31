@@ -24,20 +24,24 @@
     </nav>
 </header>
 
-<section class="hero-section">
-    <div class="container">
-        <div class="row">
-            <div class="hero-text">
-                <h1>Welcome to KVA</h1>
-                <p>Your journey to excellence starts here.</p>
-                <a href="#" class="btn">Join Now</a>
-            </div>
-            <div class="hero-image">
-                <img src="../Images/logo.png" alt="Hero Image">
-            </div>
-        </div>
+<section class="hero-section" aria-labelledby="hero-title">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <h1 id="hero-title">Welcome to KVA</h1>
+      <p>Your journey to excellence starts here.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">Join Now</a>
+        <a href="#" class="btn btn-ghost">Learn more</a>
+      </div>
     </div>
+
+    <figure class="hero-image">
+      <img src="../Images/logo.png" alt="KVA volleyball emblem">
+    </figure>
+
+  </div>
 </section>
+
 
 <section class="sponsors-section">
     <h2>Our Sponsors</h2>
@@ -48,8 +52,14 @@
         <img src="https://via.placeholder.com/140x80" alt="Sponsor 4">
         <img src="https://via.placeholder.com/140x80" alt="Sponsor 5">
         <img src="https://via.placeholder.com/140x80" alt="Sponsor 6">
+        <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
-
+    </div>
+</section>
 <!-- Congradulations secton -->
 <section>
 <div class="container congrats-container">
@@ -74,14 +84,6 @@
 </div>
 </section>
 
-<section>
-    <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-</section>
 
 </body>
 </html>
