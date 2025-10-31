@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+
+:root {
+    --primary-color: orange;
+    --secondary-color: black;
+    --accent-color: #0077c8;
+    --nav-bg: black;
+    --text-color: white;
+    --font-family:"Arial, sans-serif";
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #f4f4f4;

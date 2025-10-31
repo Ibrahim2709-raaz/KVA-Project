@@ -67,6 +67,8 @@ nav ul li a {
 .row{
     display: inline;
     margin: 0 15px;
+    justify-content: space-between;
+
 
 }
 
@@ -75,6 +77,7 @@ nav ul li a {
     width: auto;
     margin-bottom: 20px;
     display: inline-block;
+    
 }
 
 
