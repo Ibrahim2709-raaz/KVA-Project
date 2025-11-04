@@ -25,20 +25,47 @@
 </header>
 
 <section class="hero-section" aria-labelledby="hero-title">
+  <!-- decorative animated blobs -->
+  <div class="hero-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
   <div class="hero-grid">
-    <div class="hero-text">
-      <h1 id="hero-title">Welcome to KVA</h1>
-      <p>Your journey to excellence starts here.</p>
-      <div class="hero-actions">
-        <a href="#" class="btn btn-primary">Join Now</a>
+    <div class="hero-text reveal-up">
+      <h1 id="hero-title" class="gradient-title">Welcome to KVA</h1>
+      <p class="reveal-fade">Your journey to excellence starts here.</p>
+      <div class="hero-actions reveal-up">
+        <a href="#" class="btn btn-primary sheen">Join Now</a>
         <a href="#" class="btn btn-ghost">Learn more</a>
       </div>
     </div>
 
-    <figure class="hero-image">
+    <!-- Add inside .hero-text (after buttons) -->
+<ul class="hero-badges" aria-label="KVA highlights">
+  <li><strong>400+</strong> athletes</li>
+  <li><strong>12</strong> teams</li>
+  <li><strong>Since 2009</strong></li>
+</ul>
+
+<!-- Update your hero image for better perf & resolution -->
+<figure class="hero-image reveal-zoom">
+  <img
+    src="../Images/logo.png"
+    alt="KVA volleyball emblem"
+    width="800" height="800" 
+    decoding="async" loading="eager" />
+</figure>
+
+<!-- Add scroll cue at the end of .hero-grid -->
+<a class="scroll-cue" href="#program-info-title" aria-label="Scroll to program details">
+  <span class="chev"></span>
+</a>
+
+    <figure class="hero-image reveal-zoom">
       <img src="../Images/logo.png" alt="KVA volleyball emblem">
     </figure>
-
   </div>
 </section>
 
@@ -84,6 +111,7 @@
 </div>
 </section>
 
+<script src="script.js"></script>
 
 </body>
 </html>

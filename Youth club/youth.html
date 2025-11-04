@@ -9,30 +9,38 @@
 <body>
 
     <header>
-            <nav>
-                <div class="logo">
-                    <img src="" alt="KVA Logo">
-                </div>
-                <div class="nav-links">
-                    <ul>
-                        <li><a href="../Home/index.html">Home</a></li>
-                        <li><a href="#">Youth Club</a></li>
-                        <li><a href="">Adult Club</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <nav>
+        <div class="logo">
+            <img src="../Images/logo.png" alt="KVA Logo">
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Youth Club</a></li>
+                <li><a href="#">Adult Club</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero-section" aria-labelledby="hero-title">
+  <div class="hero-grid">
     <div class="hero-text">
-      <h1>2025 Youth Club Tryout</h1>
-      <h1>Registration</h1>
-      <p>Register by 15 Nov</p>
-      <button class="register-btn">Register Now</button>
+      <h1 id="hero-title">Welcome to KVA</h1>
+      <p>Your journey to excellence starts here.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">Join Now</a>
+        <a href="#" class="btn btn-ghost">Learn more</a>
+      </div>
     </div>
-    <div class="hero-img"></div>
-  </section>
+
+    <figure class="hero-image">
+      <img src="../Images/logo.png" alt="KVA volleyball emblem">
+    </figure>
+
+  </div>
+</section>
 
   <!-- TRYOUT DETAILS -->
   <section class="tryout-details">
@@ -45,12 +53,75 @@
   </section>
 
   <!-- TABS SECTION -->
-  <section class="tabs">
-    <div class="tab">Age Groups & Formation</div>
-    <div class="tab">Commitment Expectations</div>
-    <div class="tab">Practice Players & Team Structure</div>
-    
-  </section>
+  <<section class="info-tabs" aria-labelledby="program-info-title">
+  <h2 id="program-info-title" class="sr-only">Program Information</h2>
+
+  <div class="tabs-grid">
+    <!-- LEFT: tab list -->
+    <ul class="tablist" role="tablist" aria-orientation="vertical">
+      <li>
+        <button role="tab" id="tab-age" aria-controls="panel-age" aria-selected="true" tabindex="0">
+          Age Groups & Formation
+        </button>
+      </li>
+      <li>
+        <button role="tab" id="tab-commit" aria-controls="panel-commit" aria-selected="false" tabindex="-1">
+          Commitment Expectations
+        </button>
+      </li>
+      <li>
+        <button role="tab" id="tab-structure" aria-controls="panel-structure" aria-selected="false" tabindex="-1">
+          Practice Players & Team Structure
+        </button>
+      </li>
+    </ul>
+
+    <!-- RIGHT: content container -->
+    <div class="panels">
+      <article id="panel-age" role="tabpanel" aria-labelledby="tab-age">
+        <h3>Age Groups & Formation</h3>
+        <p>
+          Teams are organized by birth year (U12, U14, U16, U18) following provincial guidelines.
+          Roster sizes target 10–12 athletes. Final formation considers skills evaluation, positional
+          balance, and coach availability.
+        </p>
+        <ul>
+          <li>Tryouts held each August–September</li>
+          <li>Evaluation rubric: technical, tactical, physical, mindset</li>
+          <li>Mid-season movement only by director approval</li>
+        </ul>
+      </article>
+
+      <article id="panel-commit" role="tabpanel" aria-labelledby="tab-commit" hidden>
+        <h3>Commitment Expectations</h3>
+        <p>
+          Our culture values attendance, communication, and growth. Families commit for the full
+          season (Oct–Apr).
+        </p>
+        <ul>
+          <li>Training: 2–3 sessions/week, plus strength blocks</li>
+          <li>Tournaments: 5–8 events, travel required for some divisions</li>
+          <li>Player code: be coachable, arrive early, own your gear & recovery</li>
+          <li>Parent code: support, not sideline coaching; respect officials</li>
+        </ul>
+      </article>
+
+      <article id="panel-structure" role="tabpanel" aria-labelledby="tab-structure" hidden>
+        <h3>Practice Players & Team Structure</h3>
+        <p>
+          Practice players train with squads, access development plans, and may be called up for
+          competition when eligible.
+        </p>
+        <ul>
+          <li>Squad model: A/Black (performance), B/Orange (development)</li>
+          <li>Shared curriculum across squads for seamless call-ups</li>
+          <li>Practice players: reduced fees, quarterly reviews, pathway to roster</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
 
 <section class="tabs">
     <div class="tab">Coaches and Travel arrangement</div>
@@ -61,6 +132,53 @@
     <h2>Fees Table</h2>
     <p>(Coming soon)</p>
   </section>
+
+
+<script>
+  (function(){
+    const tabs = document.querySelectorAll('[role="tab"]');
+    const panels = document.querySelectorAll('[role="tabpanel"]');
+
+    function activate(tab){
+      // Deselect all
+      tabs.forEach(t=>{
+        t.setAttribute('aria-selected','false');
+        t.tabIndex = -1;
+      });
+      panels.forEach(p=>p.hidden = true);
+
+      // Select current
+      tab.setAttribute('aria-selected','true');
+      tab.tabIndex = 0;
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      panel.hidden = false;
+      panel.focus?.();
+    }
+
+    // Click
+    tabs.forEach(tab=>{
+      tab.addEventListener('click', ()=>activate(tab));
+    });
+
+    // Keyboard (arrows/home/end)
+    const keyMap = {ArrowUp:-1, ArrowLeft:-1, ArrowDown:1, ArrowRight:1};
+    document.querySelector('.tablist').addEventListener('keydown', (e)=>{
+      if(!(e.key in keyMap || e.key==='Home' || e.key==='End')) return;
+      e.preventDefault();
+      const current = document.activeElement;
+      const list = Array.from(tabs);
+      let idx = list.indexOf(current);
+      if(e.key==='Home') idx = 0;
+      else if(e.key==='End') idx = list.length-1;
+      else idx = (idx + keyMap[e.key] + list.length) % list.length;
+      list[idx].focus();
+      activate(list[idx]);
+    });
+
+    // Init: show first panel
+    activate(document.querySelector('[role="tab"]'));
+  })();
+</script>
 
 </body>
 </html>
