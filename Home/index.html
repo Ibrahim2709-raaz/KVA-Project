@@ -9,6 +9,23 @@
 </head>
 
 <body>
+<!-- Loading Splash -->
+<div id="loader" class="loader-overlay" aria-hidden="false">
+  <div class="loader-wrap" role="status" aria-live="polite" aria-label="Loading">
+    <!-- Logo circle -->
+    <div class="loader-circle">
+      <!-- Your logo in the middle -->
+      <img src="../Images/logo.png" alt="KVA Logo" class="loader-logo" />
+      <!-- SVG ring with animated stroke -->
+      <svg class="loader-ring" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+        <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+      </svg>
+    </div>
+    <p class="loader-text">Loading…</p>
+  </div>
+</div>
+
 
   <header>
     <nav class="container">
@@ -57,25 +74,36 @@
     </section>
 
 
-    <section class="sponsors-section">
-      <h2>Our Sponsors</h2>
-      <div class="sponsor-logos">
-        <img src="https://via.placeholder.com/140x80" alt="Sponsor 1">
-        <img src="https://via.placeholder.com/140x80" alt="Sponsor 2">
-        <img src="https://via.placeholder.com/140x80" alt="Sponsor 3">
-        <img src="https://via.placeholder.com/140x80" alt="Sponsor 4">
-        <img src="https://via.placeholder.com/140x80" alt="Sponsor 5">
-        <img src="https://via.placeholder.com/140x80" alt="Sponsor 6">
-        <div class="dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+    <section class="sponsors-section reveal-box" aria-labelledby="sponsors-title">
+      <h2 id="sponsors-title" class="sr-only">Our Sponsors</h2>
+
+      <div class="sponsors-slider" data-autoplay="true" data-interval="1500">
+        
+        <!-- track -->
+        <ul class="ss-track" role="listbox" aria-live="polite">
+          <!-- Each li is a “card” -->
+          <li class="ss-card" role="option" aria-selected="false">
+            <img src="https://via.placeholder.com/320x180?text=Sponsor+1" alt="Sponsor 1">
+          </li>
+          <li class="ss-card" role="option" aria-selected="false">
+            <img src="https://via.placeholder.com/320x180?text=Sponsor+2" alt="Sponsor 2">
+          </li>
+          <li class="ss-card" role="option" aria-selected="true">
+            <img src="https://via.placeholder.com/320x180?text=Sponsor+3" alt="Sponsor 3">
+          </li>
+          <li class="ss-card" role="option" aria-selected="false">
+            <img src="https://via.placeholder.com/320x180?text=Sponsor+4" alt="Sponsor 4">
+          </li>
+
+        </ul>
+
+        <!-- dots -->
+        <div class="ss-dots" role="tablist" aria-label="Sponsor slides"></div>
       </div>
     </section>
+
     <!-- Congradulations secton -->
-    <section>
+    <section class="reveal-box">
       <div class="container congrats-container">
         <div id="pic">pic</div>
         <div id="congrats">Congradulations </div>
@@ -83,7 +111,8 @@
     </section>
 
     <!-- News and Events section -->
-    <section>
+    <section class="reveal-box">
+
       <div class="container news-events-container">
         <div id="news">News
           <div>News 1</div>
@@ -98,8 +127,23 @@
       </div>
     </section>
   </main>
+<!-- Pop-up modal -->
+<div class="modal-overlay" id="siteModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" tabindex="-1">
+    <button class="modal-close" id="modalClose" aria-label="Close pop-up">×</button>
 
+    <h3 id="modalTitle">Welcome to KVA</h3>
+    <p id="modalDesc">Tryouts open now! Join our youth & adult programs and be part of the community.</p>
+
+    <a href="#"
+       class="modal-cta"
+       id="modalCTA"
+       role="button"
+       >Explore Programs</a>
+  </div>
+</div>
   <script src="script.js"></script>
+
 
 </body>
 
