@@ -1,78 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>KVA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>KVA</title>
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <img src="../Images/logo.png" alt="KVA Logo">
-        </div>
-        <div class="nav-links">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Youth Club</a></li>
-                <li><a href="#">Adult Club</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<section class="hero-section" aria-labelledby="hero-title">
-  <!-- decorative animated blobs -->
-  <div class="hero-blobs" aria-hidden="true">
-    <span class="blob b1"></span>
-    <span class="blob b2"></span>
-    <span class="blob b3"></span>
-  </div>
-
-  <div class="hero-grid">
-    <div class="hero-text reveal-up">
-      <h1 id="hero-title" class="gradient-title">Welcome to KVA</h1>
-      <p class="reveal-fade">Your journey to excellence starts here.</p>
-      <div class="hero-actions reveal-up">
-        <a href="#" class="btn btn-primary sheen">Join Now</a>
-        <a href="#" class="btn btn-ghost">Learn more</a>
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <img src="../Images/logo.png" alt="KVA Logo">
       </div>
-    </div>
 
-    <!-- Add inside .hero-text (after buttons) -->
-<ul class="hero-badges" aria-label="KVA highlights">
-  <li><strong>400+</strong> athletes</li>
-  <li><strong>12</strong> teams</li>
-  <li><strong>Since 2009</strong></li>
-</ul>
+      <!-- Hamburger button -->
+      <div class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        &#9776;
+      </div>
 
-<!-- Update your hero image for better perf & resolution -->
-<figure class="hero-image reveal-zoom">
-  <img
-    src="../Images/logo.png"
-    alt="KVA volleyball emblem"
-    width="800" height="800" 
-    decoding="async" loading="eager" />
-</figure>
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Youth Club</a></li>
+          <li><a href="#">Adult Club</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<!-- Add scroll cue at the end of .hero-grid -->
-<a class="scroll-cue" href="#program-info-title" aria-label="Scroll to program details">
-  <span class="chev"></span>
-</a>
+  </header>
 
-    <figure class="hero-image reveal-zoom">
-      <img src="../Images/logo.png" alt="KVA volleyball emblem">
-    </figure>
-  </div>
-</section>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text reveal" id="hero-title">
+          <h1 class="W-text">Welcome to <span class="hl">KVA</span></h1>
+          <p>Your journey to excellence starts here.</p>
+          <div class="hero-actions">
+            <a href="#" class="btn" id="joinBtn">Join Now</a>
+            <a href="#" class="btn btn-ghost" id="learnBtn">Learn more</a>
+          </div>
+        </div>
+
+        <figure class="hero-image reveal">
+          <picture>
+
+            <img src="../Images/logo.png" alt="KVA volleyball emblem" width="800" height="800" decoding="async"
+              loading="eager" fetchpriority="high">
+          </picture>
+        </figure>
+      </div>
+    </section>
 
 
-<section class="sponsors-section">
-    <h2>Our Sponsors</h2>
-    <div class="sponsor-logos">
+    <section class="sponsors-section">
+      <h2>Our Sponsors</h2>
+      <div class="sponsor-logos">
         <img src="https://via.placeholder.com/140x80" alt="Sponsor 1">
         <img src="https://via.placeholder.com/140x80" alt="Sponsor 2">
         <img src="https://via.placeholder.com/140x80" alt="Sponsor 3">
@@ -80,38 +67,40 @@
         <img src="https://via.placeholder.com/140x80" alt="Sponsor 5">
         <img src="https://via.placeholder.com/140x80" alt="Sponsor 6">
         <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-    </div>
-</section>
-<!-- Congradulations secton -->
-<section>
-<div class="container congrats-container">
-	<div id="pic">pic</div>
-	<div id="congrats">Congradulations </div>
-</div>
-</section>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+    <!-- Congradulations secton -->
+    <section>
+      <div class="container congrats-container">
+        <div id="pic">pic</div>
+        <div id="congrats">Congradulations </div>
+      </div>
+    </section>
 
-<!-- News and Events section -->
-<section>
-<div class="container news-events-container">
-  <div id="news">News
-  	<div>News 1</div>
-    <div>News 2</div>
-    <div>News 3</div>
-   </div>
-  <div id="events">Events
-  	<div>Event 1</div>
-    <div>Event 2</div>
-    <div>Event 3</div>
-   </div>
-</div>
-</section>
+    <!-- News and Events section -->
+    <section>
+      <div class="container news-events-container">
+        <div id="news">News
+          <div>News 1</div>
+          <div>News 2</div>
+          <div>News 3</div>
+        </div>
+        <div id="events">Events
+          <div>Event 1</div>
+          <div>Event 2</div>
+          <div>Event 3</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
