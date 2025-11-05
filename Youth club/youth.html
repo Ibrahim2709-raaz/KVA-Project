@@ -1,184 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>2025 Club Tryout Registration</title>
-  <link rel="stylesheet" href="youth.css">
+  <link rel="stylesheet" href="youth.css" />
 </head>
 <body>
 
-    <header>
-    <nav>
-        <div class="logo">
-            <img src="../Images/logo.png" alt="KVA Logo">
-        </div>
-        <div class="nav-links">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Youth Club</a></li>
-                <li><a href="#">Adult Club</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-  <!-- HERO SECTION -->
-  <section class="hero-section" aria-labelledby="hero-title">
-  <div class="hero-grid">
-    <div class="hero-text">
-      <h1 id="hero-title">Welcome to KVA</h1>
-      <p>Your journey to excellence starts here.</p>
-      <div class="hero-actions">
-        <a href="#" class="btn btn-primary">Join Now</a>
-        <a href="#" class="btn btn-ghost">Learn more</a>
+  <!-- Loading Splash -->
+  <div id="loader" class="loader-overlay" aria-hidden="false">
+    <div class="loader-wrap" role="status" aria-live="polite" aria-label="Loading">
+      <div class="loader-circle">
+        <img src="../Images/logo.png" alt="KVA Logo" class="loader-logo" />
+        <svg class="loader-ring" viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+          <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+        </svg>
       </div>
+      <p class="loader-text">Loading…</p>
     </div>
-
-    <figure class="hero-image">
-      <img src="../Images/logo.png" alt="KVA volleyball emblem">
-    </figure>
-
   </div>
-</section>
 
-  <!-- TRYOUT DETAILS -->
-  <section class="tryout-details">
-    <div class="box">
-      
+  <!-- Skip link -->
+  <a href="#main" class="skip">Skip to content</a>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <img src="../Images/logo.png" alt="KVA Logo" />
+      </div>
+
+      <!-- Hamburger -->
+      <div class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">&#9776;</div>
+
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Youth Club</a></li>
+          <li><a href="#">Adult Club</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section reveal-box" aria-labelledby="hero-title">
+      <div class="hero-grid container">
+        <div class="hero-text">
+          <h1 id="hero-title">2025 Club Tryout Registration</h1>
+          <p>Registration opens October 15th at 9:00AM and will close on November 15th at 12:00PM.</p>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary">Register Now</a>
+            <a href="#" class="btn btn-ghost">Learn More</a>
+          </div>
+        </div>
+        <figure class="hero-image">
+          <img src="../Images/logo.png" alt="KVA volleyball emblem" />
+        </figure>
+      </div>
+    </section>
+
+<!-- TRYOUT DETAILS -->
+<section class="tryout-details reveal-box">
+  <div class="tryout-grid container">
+    <!-- Left Column: What to Expect at Tryouts -->
+    <div class="tryout-left">
+      <h3>What to Expect at Tryouts</h3>
+      <ul>
+        <li><strong>Time Slots:</strong> Each age group will have two time slots on their tryout day.</li>
+        <li><strong>Evaluation Numbers:</strong> Each participant will have an assigned number for identification.</li>
+        <li><strong>Jersey Try-on:</strong> All players are required to try on jerseys to ensure the correct sizes.</li>
+        <li><strong>Assessment:</strong> Multiple coaches will evaluate players based on skills and performance.</li>
+      </ul>
+      <h3>Fees</h3>
+      <p class="fee-amount">$40.00 + GST per Participant</p>
     </div>
-    <div class="box">
-      
-    </div>
-  </section>
 
-  <!-- TABS SECTION -->
-  <<section class="info-tabs" aria-labelledby="program-info-title">
-  <h2 id="program-info-title" class="sr-only">Program Information</h2>
-
-  <div class="tabs-grid">
-    <!-- LEFT: tab list -->
-    <ul class="tablist" role="tablist" aria-orientation="vertical">
-      <li>
-        <button role="tab" id="tab-age" aria-controls="panel-age" aria-selected="true" tabindex="0">
-          Age Groups & Formation
-        </button>
-      </li>
-      <li>
-        <button role="tab" id="tab-commit" aria-controls="panel-commit" aria-selected="false" tabindex="-1">
-          Commitment Expectations
-        </button>
-      </li>
-      <li>
-        <button role="tab" id="tab-structure" aria-controls="panel-structure" aria-selected="false" tabindex="-1">
-          Practice Players & Team Structure
-        </button>
-      </li>
-    </ul>
-
-    <!-- RIGHT: content container -->
-    <div class="panels">
-      <article id="panel-age" role="tabpanel" aria-labelledby="tab-age">
-        <h3>Age Groups & Formation</h3>
-        <p>
-          Teams are organized by birth year (U12, U14, U16, U18) following provincial guidelines.
-          Roster sizes target 10–12 athletes. Final formation considers skills evaluation, positional
-          balance, and coach availability.
-        </p>
-        <ul>
-          <li>Tryouts held each August–September</li>
-          <li>Evaluation rubric: technical, tactical, physical, mindset</li>
-          <li>Mid-season movement only by director approval</li>
-        </ul>
-      </article>
-
-      <article id="panel-commit" role="tabpanel" aria-labelledby="tab-commit" hidden>
-        <h3>Commitment Expectations</h3>
-        <p>
-          Our culture values attendance, communication, and growth. Families commit for the full
-          season (Oct–Apr).
-        </p>
-        <ul>
-          <li>Training: 2–3 sessions/week, plus strength blocks</li>
-          <li>Tournaments: 5–8 events, travel required for some divisions</li>
-          <li>Player code: be coachable, arrive early, own your gear & recovery</li>
-          <li>Parent code: support, not sideline coaching; respect officials</li>
-        </ul>
-      </article>
-
-      <article id="panel-structure" role="tabpanel" aria-labelledby="tab-structure" hidden>
-        <h3>Practice Players & Team Structure</h3>
-        <p>
-          Practice players train with squads, access development plans, and may be called up for
-          competition when eligible.
-        </p>
-        <ul>
-          <li>Squad model: A/Black (performance), B/Orange (development)</li>
-          <li>Shared curriculum across squads for seamless call-ups</li>
-          <li>Practice players: reduced fees, quarterly reviews, pathway to roster</li>
-        </ul>
-      </article>
+    <!-- Right Column: Tryout Dates and Location -->
+    <div class="tryout-right">
+      <h3>Tryout Dates</h3>
+      <ul>
+        <li><strong>November 16th</strong> - 13U & 14U Girls</li>
+        <li><strong>November 23rd</strong> - 15U Girls, 14U & 15U Boys</li>
+        <li><strong>November 30th</strong> - 16U, 17U, 18U Girls & Boys</li>
+      </ul>
+      <p><strong>Location:</strong> Valleyview Secondary School - 1950 Valleyview Dr, Kamloops</p>
+      <p>We are aware that some age groups may have a scheduling conflict due to High School Provincials. If this applies, please contact us:</p>
+      <p><a href="mailto:operations@kamvolleyball.ca">operations@kamvolleyball.ca</a></p>
     </div>
   </div>
 </section>
 
 
-<section class="tabs">
-    <div class="tab">Coaches and Travel arrangement</div>
-    <div class="tab">Resources</div>
-</section>
-  <!-- FEES TABLE -->
-  <section class="fees-table">
+
+
+    <!-- PROGRAM OVERVIEW -->
+    <section class="info-tabs reveal-box">
+      <h2 id="program-info-title" class="sr-only">Program Information</h2>
+      <div class="tabs-grid container">
+        <ul class="tablist" role="tablist" aria-orientation="vertical">
+          <li><button role="tab" id="tab-age" aria-controls="panel-age" aria-selected="true" tabindex="0">Age Groups & Formation</button></li>
+          <li><button role="tab" id="tab-commit" aria-controls="panel-commit" aria-selected="false" tabindex="-1">Commitment Expectations</button></li>
+          <li><button role="tab" id="tab-structure" aria-controls="panel-structure" aria-selected="false" tabindex="-1">Practice Players & Team Structure</button></li>
+        </ul>
+
+        <div class="panels">
+          <article id="panel-age" role="tabpanel" aria-labelledby="tab-age">
+            <h3>Age Groups & Formation</h3>
+            <p>Teams are organized by birth year (U12, U14, U16, U18) following provincial guidelines. Roster sizes target 10–12 athletes. Final formation considers skills evaluation, positional balance, and coach availability.</p>
+            <ul>
+              <li>Tryouts held each August–September</li>
+              <li>Evaluation rubric: technical, tactical, physical, mindset</li>
+              <li>Mid-season movement only by director approval</li>
+            </ul>
+          </article>
+
+          <article id="panel-commit" role="tabpanel" aria-labelledby="tab-commit" hidden>
+            <h3>Commitment Expectations</h3>
+            <p>Our culture values attendance, communication, and growth. Families commit for the full season (Oct–Apr).</p>
+            <ul>
+              <li>Training: 2–3 sessions/week, plus strength blocks</li>
+              <li>Tournaments: 5–8 events, travel required for some divisions</li>
+              <li>Player code: be coachable, arrive early, own your gear & recovery</li>
+              <li>Parent code: support, not sideline coaching; respect officials</li>
+            </ul>
+          </article>
+
+          <article id="panel-structure" role="tabpanel" aria-labelledby="tab-structure" hidden>
+            <h3>Practice Players & Team Structure</h3>
+            <p>Practice players train with squads, access development plans, and may be called up for competition when eligible.</p>
+            <ul>
+              <li>Squad model: A/Black (performance), B/Orange (development)</li>
+              <li>Shared curriculum across squads for seamless call-ups</li>
+              <li>Practice players: reduced fees, quarterly reviews, pathway to roster</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <  <!-- FEES TABLE -->
+  <section class="fees-table reveal-box">
     <h2>Fees Table</h2>
-    <p>(Coming soon)</p>
+    <p>Here are the tryout and club program fees. Financial assistance options are available to reduce the costs.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Fee (CAD)</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tryout Fee</td>
+          <td>$40.00 + GST</td>
+          <td>Fee per participant for tryouts.</td>
+        </tr>
+        <tr>
+          <td>Club Season Fee</td>
+          <td>$XXX.00</td>
+          <td>Full season participation (Jan–May).</td>
+        </tr>
+        <tr>
+          <td>Financial Assistance</td>
+          <td>Varies</td>
+          <td>Through programs like Kidsport, Athletics4Kids, and KVA Hardship Fund.</td>
+        </tr>
+        <tr>
+          <td>Coach Fees</td>
+          <td>$XXX.00</td>
+          <td>Per tournament honorarium; paid in advance of travel events.</td>
+        </tr>
+        <tr>
+          <td>Travel Fees</td>
+          <td>Varies</td>
+          <td>Cover food, lodging, and mileage for out-of-town tournaments.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We are committed to keeping the costs of participation as affordable as possible. If you have any questions about fees or financial assistance, please don't hesitate to contact us.</p>
   </section>
 
+  </main>
 
-<script>
-  (function(){
-    const tabs = document.querySelectorAll('[role="tab"]');
-    const panels = document.querySelectorAll('[role="tabpanel"]');
-
-    function activate(tab){
-      // Deselect all
-      tabs.forEach(t=>{
-        t.setAttribute('aria-selected','false');
-        t.tabIndex = -1;
-      });
-      panels.forEach(p=>p.hidden = true);
-
-      // Select current
-      tab.setAttribute('aria-selected','true');
-      tab.tabIndex = 0;
-      const panel = document.getElementById(tab.getAttribute('aria-controls'));
-      panel.hidden = false;
-      panel.focus?.();
-    }
-
-    // Click
-    tabs.forEach(tab=>{
-      tab.addEventListener('click', ()=>activate(tab));
-    });
-
-    // Keyboard (arrows/home/end)
-    const keyMap = {ArrowUp:-1, ArrowLeft:-1, ArrowDown:1, ArrowRight:1};
-    document.querySelector('.tablist').addEventListener('keydown', (e)=>{
-      if(!(e.key in keyMap || e.key==='Home' || e.key==='End')) return;
-      e.preventDefault();
-      const current = document.activeElement;
-      const list = Array.from(tabs);
-      let idx = list.indexOf(current);
-      if(e.key==='Home') idx = 0;
-      else if(e.key==='End') idx = list.length-1;
-      else idx = (idx + keyMap[e.key] + list.length) % list.length;
-      list[idx].focus();
-      activate(list[idx]);
-    });
-
-    // Init: show first panel
-    activate(document.querySelector('[role="tab"]'));
-  })();
-</script>
-
+  <script src="youth.js"></script>
 </body>
 </html>

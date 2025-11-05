@@ -237,35 +237,20 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-// -------- Scroll Reveal: full-width sections toggle both ways --------
+// -------- Scroll Reveal for Box Sections --------
 (function(){
   const boxes = document.querySelectorAll('.reveal-box');
   if(!boxes.length) return;
 
-  // Trigger a bit before the section is fully in view
-  const io = new IntersectionObserver((entries)=>{
+  const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.classList.add('in-view');
-      } else {
-        // remove when it leaves viewport so it can animate again on scroll-up
-        entry.target.classList.remove('in-view');
+        // once animated, you can unobserve to avoid repeat
+        observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.15,
-    root: null,
-    rootMargin: '0px 0px -10% 0px' // start a touch earlier near bottom
-  });
+  }, { threshold: 0.25 });
 
-  boxes.forEach(b=> io.observe(b));
-
-  // If your loader covers the page at first, this still works—
-  // but as an extra safety, re-check after load:
-  window.addEventListener('load', () => {
-    boxes.forEach(b => {
-      // Force a reflow so IntersectionObserver recalculates
-      b.getBoundingClientRect();
-    });
-  });
+  boxes.forEach(b=>observer.observe(b));
 })();
