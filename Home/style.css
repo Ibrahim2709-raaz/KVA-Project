@@ -288,62 +288,101 @@ nav a:hover {
 
 
 
-.container {
-  border: 2px solid black;
+.container{
   padding: 2%;
   margin: 2% 0%;
-  width: 100%
+  width:100%;
 }
 
 /*Congrats section styling */
-.congrats-container {
+#dark-section{
+  background-image: linear-gradient(to top,
+    var(--muted) 0.5%,
+    var(--bg-bot) 3%, 
+    var(--bg-bot) 97%,
+    var(--muted) 99.5%,
+    var(--bg-bot) 100%
+  );
+  border-radius: 2%;
+}
+
+.congrats-container{
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 5%;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  gap: 2%;
+  height: 100%;
+  width: 75%;
 }
-
-.congrats-container div {
-  border: 1px solid black;
-  border-radius: 2px;
-  padding: 2%;
+  
+.congrats-container div{
+  padding: 1%;
   font-size: 1.5em;
-  text-align: left;
-  box-shadow: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: var(--ink);
+  text-shadow: 2px, 2px var(--text-color);
+  font-weight: bolder;
 }
-
+  
+#pic {
+  width: 650px;
+  height: 500px;
+  border-radius: 5%;
+  background-color: lightsalmon;
+  background-image:url('../Images/2024-18U-National.jpg');
+  background-size:100% 100%;
+}
+  
 /*News and events styling*/
 .news-events-container {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: grid;
   border-radius: 30px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   grid-template-columns: 1fr 1fr;
   gap: 5%;
 }
 
 .news-events-container div {
-  border: 1px solid black;
   border-radius: 10px;
   padding: 3%;
   font-size: 1.5em;
   text-align: left;
 }
 
-#news div,
-#events div {
+#news div, #events div {
   font-size: 1em;
   margin: 2% 0%;
   padding: 2%;
-  border: 1px solid grey;
+  border: inherit; 
+}
+  
+.news-announcment{
+  color: var(--brand);
+  border-left: solid 5px var(--brand);
+  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 60px; 
+}
+  
+#news div:nth-child(odd),
+#events div:nth-child(even){
+  background-color: var(--bg-top);
+  color: var(--ink);
 }
 
-/* Hamburger menu hidden on desktop */
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  color: var(--text-color);
+#news div:nth-child(even),
+#events div:nth-child(odd){
+  background-color: var(--ink);
+  color: var(--bg-top);
+}
+
+#news div:hover,
+#events div:hover {
+  background-color: var(--brand);
+  color: var(--ink);
   cursor: pointer;
-  float: right;
-  margin-top: 25px;
 }
 
 /* Mobile layout */
