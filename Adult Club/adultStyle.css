@@ -1,0 +1,401 @@
+
+
+/* Tokens */
+:root{
+  --primary-color: orange;
+  --secondary-color: black;
+  --accent-color: #0077c8;
+  --nav-bg: #111;
+  --text-color: #fff;
+  --ink:#fff; --muted:#dcdcdc;
+  --bg-top:#161616; --bg-bot:#0e0e0e;
+  --gradient: linear-gradient(90deg, orange, red);
+}
+
+main {
+    background-color:oklab(from black l a b);
+}
+
+/* Container */
+.container {
+  width: min(1200px, 92vw);
+  margin-inline: auto;
+}
+
+
+/* Header / Nav (no flex) */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--nav-bg) 95%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+nav {
+  padding: 10px 4vw;
+  overflow: hidden;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  float: right;
+  margin-top: 22px;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 20px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--brand);
+}
+
+/* HERO */
+.hero-section{
+  color:var(--ink);
+  background: linear-gradient(180deg,var(--bg-top),var(--bg-bot));
+  padding: clamp(48px, 7vw, 96px) 0;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(16px, 4vw, 40px);
+  align-items:center;
+}
+.hero-text h1{
+  font-size: clamp(2.1rem, 4.5vw, 4rem);
+  line-height:1.1;
+  text-shadow: 0 2px 18px rgba(255,165,0,.08);
+}
+.hl{
+  background: linear-gradient(90deg, orange, #ffd699);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero-text p{
+  margin-top:.6rem; font-size: clamp(1rem, .9vw + .6rem, 1.2rem); color: var(--muted);
+  max-width: 55ch;
+}
+.hero-actions{ margin-top: clamp(16px, 2.2vw, 24px); }
+.hero-image{
+  display:grid; place-items:center;
+  width:100%; max-width:520px; aspect-ratio:1/1;
+  border-radius:20px; overflow:hidden; background:none; border:none; box-shadow:none;
+}
+.hero-image img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+/* Hide hero image on mobile (as in your other page) */
+@media (max-width:768px){
+  .hero-image{ display:none; }
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-text{ text-align:center; }
+  .hero-actions{ text-align:center; }
+}
+
+
+/*Fees Table*/
+.fees-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.fees-table th, .fees-table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fees-table th {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.fees-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fees-table td {
+  color: #dcdcdc;
+}
+
+.fees-table td:last-child {
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .fees-table table {
+    font-size: 0.9rem;
+  }
+  .fees-table td, .fees-table th {
+    padding: 8px;
+  }
+}
+
+/* Snapping */
+html {
+    scroll-snap-type: y relative;
+    scroll-behavior: smooth;
+    text-wrap: balance;
+    interpolate-size: allow-keywords;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: center;
+}
+
+.autoShow {
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 100vh;
+}
+
+@keyframes text-appear {
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Text blur effect NOT IN USE RIGNHT NOW*/
+.autoBlur {
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view(50% auto);
+}
+
+@keyframes autoBlurAnimation {
+    0% {
+        filter: blur(10px);
+    }
+
+    35%, 45% {
+        filter: blur(0px);
+    }
+
+    95% {
+        filter: blur(2px);
+    }
+
+    100% {
+        filter: blur(10px);
+    }
+}
+
+/*Buttons*/
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.btn {
+    font-size: 1.4rem;
+    border-radius: 3px;
+    border-color: oklch(from orange calc (1- 0.75));
+    color: black;
+}
+
+.btn::before {
+    filter: blur(15px);
+}
+
+#register {
+    background-color: rgb(255, 119, 0);
+}
+
+#more{
+    background-color:rgb(255, 170, 0);
+}
+
+.btn #register:hover,
+.btn #shedule:hover,
+.btn #register:active,
+.btn #shedule:active{
+    font-size: 1.5rem;
+    background-color:oklch(from inherit l c h);
+    border-color: oklch(from inherit) l c h;
+}
+
+/*text in elements animation when selected plus list elements style */
+ul li {
+    list-style-type: circle;
+    margin-left: 5px;
+}
+
+ul li:hover,
+ul li:active{
+    font-size: 1.3rem;
+    font-weight: 150;
+    color: transparent;
+    background: linear-gradient(90deg, orange, red);
+    list-style-type: default;
+    background-clip: text;
+    --webkit-background-clip: text;
+}
+
+a {
+    text-decoration: none;
+    color: transperent;
+    padding: 1.5%;
+}
+
+a:hover,
+a:focus-visible{
+    color: transparent;
+    background: linear-gradient(90deg, orange, red);
+    background-clip: text;
+    --webkit-background-clip: text;
+}
+
+/*expand to proper size*/
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: flow-root;
+    height: 1.15rem;
+    overflow: hidden;
+    transition: height ease 1s;
+}
+
+article:hover,
+article:focus {
+    height: max-content;
+}
+
+/*extra text styling*/
+h2 {
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(90deg, orange, red);
+    background-clip: text;
+    --webkit-background-clip: text;
+}
+
+h4{
+    color: rgb(255, 149, 0);
+    padding-left: 2.4%;
+    margin: 0.5% 0.5%;
+    text-align: left;
+} 
+
+/*grid and Styling */
+.co-ed {grid-area: co-ed;}
+.ladies {grid-area: ladies;}
+.beach {grid-area: beach;}
+.footer{ grid-area: footer; }
+.fees-table {grid-area: fees-table; }
+.startOverview {grid-area: startOverview}
+
+
+.grid-container {
+    grid-template-areas: 
+    'startOverview startOverview startOverview'
+    'co-ed' 'ladies' 'beach'
+    'fees-table fees-table fees-table'
+    'footer footer footer';
+    color: var(--bg-top);
+    padding: 5px;
+    scroll-margin-block: 5%;
+
+}
+
+section .grid-container:nth-child(even){
+    background-color: var(--muted);
+}
+
+section .grid-container:nth-child(odd){
+    background-color: black;
+}
+
+.grid-container div {
+    padding: 3%;
+    font-size: 1.125em;
+    text-align: left;
+    text-shadow: 2px, 2px var(--text-color);
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.grid-container div:nth-child(even){
+    background-color: black;
+    color: var(--text-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.grid-container div:nth-child(odd){
+    background-color: rgba(89, 89, 89);
+    color: var(--ink);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Overview Section*/
+
+.overview{
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 30px;
+    border-color:azure;
+    line-height: 1.1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.overview div:nth-child(even){
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.overview h2 {
+    font-size: 1.15rem;
+    padding-left: 2.3%;
+    margin-top: 0.7%;
+    text-shadow:rgb(255, 94, 0);
+    text-align: left;
+}
+
+.overview div h1 {
+    font-size: 1.4em;
+    color: rgb(250, 69, 4);
+    text-align: center;
+}
+
+#covered {
+    font-size: 1.3em;
+    color: rgb(250, 69, 4);
+    text-shadow: #dc7f05;
+
+}
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adult Club</title>
+  <link rel="stylesheet" href="reset.css"/>
+  <link rel="stylesheet" href="adultStyle.css" /> 
+</head>
+<body>
+
+  <!-- Loading Splash -->
+<!--
+  <div id="loader" class="loader-overlay" aria-hidden="false">
+    <div class="loader-wrap" role="status" aria-live="polite" aria-label="Loading">
+      <div class="loader-circle">
+        <img src="../Images/logo.png" alt="KVA Logo" class="loader-logo" />
+        <svg class="loader-ring" viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+          <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+        </svg>
+      </div>
+      <p class="loader-text">Loading…</p>
+    </div>
+  </div>
+-->
+  <!-- Navigation -->
+<header>
+    <nav class="container">
+      <div class="logo">
+        <img src="../Images/logo.png" alt="KVA Logo">
+      </div>
+
+      <!-- Hamburger button -->
+      <div class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        &#9776;
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Youth</a></li>
+          <li><a href="#">Adult</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <!-- HERO SECTION -->
+    <section class="hero-section reveal-box" aria-labelledby="hero-title">
+      <div class="hero-grid container">
+        <div class="hero-text">
+          <h1 id="hero-title">Adult Club</h1>
+          <p>Which team you should sign up for?</p>
+          <div class="hero-actions">
+            <a href="#" class="btn" id="register" >Register Now</a>
+            <a href="#" class="btn" id="more">Learn More</a>
+          </div>
+        </div>
+        <figure class="hero-image">
+          <img src="../Images/logo.png" alt="KVA volleyball emblem" />
+        </figure>
+      </div>
+    </section>
+
+<!-- Teams Options -->
+
+<section class="grid-container overview autoBlur">
+    <div> <h1>Overview</h1>
+        <h2>Levels</h2>
+            <div>
+                <ul>
+                    <li><strong>Competitive:</strong> Medium to high level volleyball.</li>
+                    <li><strong>Intermediate:</strong> Offers more recreational level of volleyball.</li>
+                    <li><strong>Recreational/Intermediate:</strong> All levels of volleyball.</li>
+                </ul>
+            </div>
+
+        <h2>Commitment</h2>
+        <div>
+            <p id="covered">All fees cover gym rentals, all applicable administrative costs and sessions approximately between 1.5h and 2h.</p>
+        </div>
+
+        <!-- Options Details -->
+        <h2>Players and Teams</h2>
+            <div>
+                <ul>
+                    <li><strong>Co-ed</strong> - Intermediate, Recreational/Intermediate and Beach Teams</li>
+                    <li><strong>Ladies Only</strong> - Competitive and Intermediate Teams</li>
+                </ul>
+            </div>
+        
+            <h2>Location</h2>
+            <div>
+                <ul>
+                    <li>Tuesday and Wednesday teams move up and down. Location varies depending on<a href="#">Teams Results!</a></li>
+                    <li>For more information or regarding any concern, please contact us: <a href="mailto:operations@kamvolleyball.ca">operations@kamvolleyball.ca</a></li>
+                </ul>
+            </div>
+    </div>
+</section>
+ <!-- PROGRAM OVERVIEW -->
+ <section class="grid-container autoBlur">
+    <div class="autoShow">
+        <div>
+            <article>
+            <h2>Co-ed Teams</h2>
+            <h4>Competitive Co-ed Teams</h4>
+                <ul>
+                    <li>Medium to high level volleyball.</li>
+                    <li> Approximately 20 sessions. Each session is approximately 1.5h.</li>
+                    <li> Runs on Mondays</li>
+                </ul>
+            <h4>Recreational/Intermediate Co-ed Teams</h4>
+                <ul>
+                    <li>All levels of volleyball.</li>
+                    <li> Approximately 23 sessions. Each session is approximately 1.5h.</li>
+                    <li> Runs on Wednesdays</li>
+                </ul>
+            </article>
+        </div>
+
+     <div class="autoShow">
+        <article>
+            <h2><bold>Ladies Only</bold></h2>
+            <h4>Competitive Teams</h4>
+            <ul>
+              <li>Medium to high level volleyball.</li>
+              <li> Approximately 28 sessions. Each session is approximately 2h.</li>
+              <li> Runs on Tuesdays</li>
+            </ul>
+            <h4>Intermediate Teams</h4>
+            <ul>
+              <li>More of recreational level of volleyball.</li>
+              <li> Approximately 28 sessions. Each session is approximately 2h.</li>
+              <li> Runs on Tuesdays</li>
+            </ul>
+        </article>
+    </div>
+
+    <div>
+        <article>
+            <h2>Beach Teams*</h2>
+            <ul>
+              <li>Monday: Registration is CLOSED FOR 2025!</li>
+              <li>Wednesday: Registration is CLOSED FOR 2025!</li>
+            </ul>
+            <p><italic>*(Only May-August)</italic></p>
+        </article>
+    </div>
+    </div>
+</section>
+
+  <!-- FEES TABLE -->
+<div class="autoBlur"><h2>Fees Table*</h2></div>
+<section class="fees-table section container">
+    <table>
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Fee (CAD)</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Co-ed Competitive</td>
+          <td>$985</td>
+          <td>Fee per team.</td>
+        </tr>
+        <tr>
+          <td>Co-ed Recreational/Intermediate</td>
+          <td>$985</td>
+          <td>Fee per team.</td>
+        </tr>
+        <tr>
+          <td>Ladies ONLY Competitive</td>
+          <td>1325$</td>
+          <td>Fee per team.</td>
+        </tr>
+        <tr>
+          <td>Ladies ONLY Intermediate</td>
+          <td>$1325</td>
+          <td>Fee per team.</td>
+        </tr>
+        <tr>
+          <td>Beach 3's Co-ed</td>
+          <td>$XXX.00</td>
+          <td>Fee per team</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>* All fees and quantities are estimated as numbers change year to year.</p>
+    <p>We are committed to keeping the costs of participation as affordable as possible. If you have any questions about fees or financial assistance, please don't hesitate to contact us.</p>
+</section>
+
+</main>
+
+</body>
+</html>
