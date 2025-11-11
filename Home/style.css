@@ -798,3 +798,69 @@ body.is-loading{
   .reveal-box{ opacity:1; transform:none; transition:none; }
   .reveal-box.in-view .container > *{ animation:none; }
 }
+
+
+ body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+    }
+    .container {
+      max-width: 100%;
+      margin: 40px auto;
+      padding: 5px 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    /* GRID (4 boxes) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    /* CARD BOX */
+    .card {
+      position: relative;
+      background: #c77739;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius:15px;
+    }
+    /* HOVER INFO LAYER */
+    .info {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 319px;
+      height: 140px;
+      background: black;
+      color: orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      opacity: 0%;
+      transition: 0.7s;
+      border-radius:15px;
+      border: 3px solid orange; 
+      border-style:inset;
+    }
+    .card:hover .info {
+      opacity: 1;
+    }

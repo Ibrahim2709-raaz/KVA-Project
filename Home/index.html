@@ -9,22 +9,21 @@
 </head>
 
 <body>
-<!-- Loading Splash -->
-<div id="loader" class="loader-overlay" aria-hidden="false">
-  <div class="loader-wrap" role="status" aria-live="polite" aria-label="Loading">
-    <!-- Logo circle -->
-    <div class="loader-circle">
-      <!-- Your logo in the middle -->
-      <img src="../Images/logo.png" alt="KVA Logo" class="loader-logo" />
-      <!-- SVG ring with animated stroke -->
-      <svg class="loader-ring" viewBox="0 0 120 120" aria-hidden="true">
-        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
-        <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
-      </svg>
+  <!-- Loading Splash -->
+  <div id="loader" class="loader-overlay" aria-hidden="false">
+    <div class="loader-wrap" role="status" aria-live="polite" aria-label="Loading">
+      <!-- Logo circle -->
+      <div class="loader-circle">
+        <!-- Your logo in the middle -->
+        <img src="../Images/logo.png" alt="KVA Logo" class="loader-logo" />
+        <!-- SVG ring with animated stroke -->
+        <svg class="loader-ring" viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+          <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+        </svg>
+      </div>
     </div>
-    <p class="loader-text">Loading…</p>
   </div>
-</div>
 
 
   <header>
@@ -40,10 +39,11 @@
 
       <div class="nav-links" id="navLinks">
         <ul>
+          <li><a href="../About Us/about.html">About Us</a></li>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Youth Club</a></li>
-          <li><a href="#">Adult Club</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="../Youth club/youth.html">Youth Club</a></li>
+          <li><a href="../Adult Club/adult-club.html">Adult Club</a></li>
+          <li><a href="../">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -72,13 +72,34 @@
         </figure>
       </div>
     </section>
+    <div class="container">
+      <h2>Explore Programs</h2>
+      <div class="grid">
+        <div class="card">
+          Youth Club
+          <div class="info">some text...</div>
+        </div>
+        <div class="card">
+          Camps
+          <div class="info">some text...</div>
+        </div>
+        <div class="card">
+          Adult League
+          <div class="info">some text...</div>
+        </div>
+        <div class="card">
+          Tryouts
+          <div class="info">some text...</div>
+        </div>
+      </div>
+    </div>
 
 
     <section class="sponsors-section reveal-box" aria-labelledby="sponsors-title">
       <h2 id="sponsors-title" class="sr-only">Our Sponsors</h2>
 
       <div class="sponsors-slider" data-autoplay="true" data-interval="1500">
-        
+
         <!-- track -->
         <ul class="ss-track" role="listbox" aria-live="polite">
           <!-- Each li is a “card” -->
@@ -105,7 +126,7 @@
     <!-- Congradulations secton -->
     <section class="reveal-box" id="dark-section">
       <div class="container congrats-container">
-	      <div id="pic"></div>
+        <div id="pic"></div>
         <div id="congrats"> Bronze Medalists - 18U National Championship!</div>
       </div>
     </section>
@@ -127,21 +148,18 @@
       </div>
     </section>
   </main>
-<!-- Pop-up modal -->
-<div class="modal-overlay" id="siteModal" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" tabindex="-1">
-    <button class="modal-close" id="modalClose" aria-label="Close pop-up">×</button>
+  <!-- Pop-up modal -->
+  <div class="modal-overlay" id="siteModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc"
+      tabindex="-1">
+      <button class="modal-close" id="modalClose" aria-label="Close pop-up">×</button>
 
-    <h3 id="modalTitle">Welcome to KVA</h3>
-    <p id="modalDesc">Tryouts open now! Join our youth & adult programs and be part of the community.</p>
+      <h3 id="modalTitle">Welcome to KVA</h3>
+      <p id="modalDesc">Tryouts open now! Join our youth & adult programs and be part of the community.</p>
 
-    <a href="#"
-       class="modal-cta"
-       id="modalCTA"
-       role="button"
-       >Explore Programs</a>
+      <a href="#" class="modal-cta" id="modalCTA" role="button">Explore Programs</a>
+    </div>
   </div>
-</div>
   <script src="script.js"></script>
 
 

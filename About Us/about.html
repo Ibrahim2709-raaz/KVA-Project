@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>About Us</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* Header Navigation */
+.site-header {
+  background-color: #e3e3e3;
+  border-bottom: 1px solid #ccc;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 16px;
+}
+.nav-link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+/* Main Container */
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  gap: 24px;
+}
+/* About Section */
+.hero {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 40px 25px;
+  border-radius: 10px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+.card {
+  background-color: #111111;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+}
+.text-card h2 {
+  margin-bottom: 10px;
+}
+.text-card p {
+  color: #d0d0d0;
+  line-height: 1.5;
+}
+.image-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.image-card img {
+  object-fit: cover;
+}
+/* Mission Section */
+.mission {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 30px 25px;
+}
+.mission h2 {
+  margin-bottom: 10px;
+}
+/* Tab Row */
+.tab-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  color: #111;
+  border-radius: 10px;
+  padding: 18px 0;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #cfcfcf;
+}
+.pill:hover {
+  background-color: #c8c8c8;
+}
+/* Info Strip */
+.info-strip {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 22px 24px;
+  border-radius: 10px;
+  text-transform: lowercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .pill-row {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<body>
+  <!-- Top Nav -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#" class="nav-link">Teams</a>
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Tryouts</a>
+    </nav>
+  </header>
+  <main class="container">
+<!-- Big ABOUT US banner -->
+    <section class="hero">
+      <h1>ABOUT US</h1>
+    </section>
+<!-- 2-column row: background text + image -->
+    <section class="about-grid">
+    
+      <article class="card text-card">
+        <h2>Organization Background</h2>
+        <p>
+          random text....
+        </p>
+      </article>
+      <figure class="card image-card">
+        <img src="#####" alt="Team/Organization Image">
+      </figure>
+    </section>
+<!-- Mission banner -->
+    <section class="mission">
+      <h2>OUR MISSION</h2>
+      <p>random text....</p>
+    </section>
+ <!-- The 3 -->
+    <section class="tab-row">
+      <a href="#" class="tab">TEAM VALUES</a>
+      <a href="#" class="tab">TEAM WORK</a>
+      <a href="#" class="tab">THE COACHES</a>
+    </section>
+    <!-- footer -->
+    <section class="info-strip">
+      <h3>team information</h3>
+    </section>
+  </main>
+</body>
+</html>
