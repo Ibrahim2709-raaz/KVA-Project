@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="reset.css"/>
+  <link rel="stylesheet" href="contactUs.css" /> 
+</head>
+<body>
+
+  <!-- Loading Splash -->
+<!--
+  <div id="loader" class="loader-overlay" aria-hidden="false">
+    <div class="loader-wrap" role="status" aria-live="polite" aria-label="Loading">
+      <div class="loader-circle">
+        <img src="../Images/logo.png" alt="KVA Logo" class="loader-logo" />
+        <svg class="loader-ring" viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+          <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+        </svg>
+      </div>
+      <p class="loader-text">Loading…</p>
+    </div>
+  </div>
+-->
+  <!-- Navigation -->
+<header>
+    <nav class="container">
+      <div class="logo">
+        <img src="../Images/logo.png" alt="KVA Logo">
+      </div>
+
+      <!-- Hamburger button -->
+      <div class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        &#9776;
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="../Home/index.html">Home</a></li>
+          <li><a href="../Youth club/youth.html">Youth</a></li>
+          <li><a href="../Adult Club/adult-club.html">Adult</a></li>
+          <li><a href="contactUs.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <body>
+    <main> 
+        <section class="container">
+            <div>
+                <form action="https://api.web3forms.com/submit" method="POST" >
+                    <input type="hidden" name="access_key" value="05d8ca6c-9ef1-49c5-ac83-e3fc8bdddd41">
+
+                    <fieldset class="form">
+                        <legend class="legend">Contact Us</legend>
+                        
+                        <div class="form-group">
+                            <label for="name"> Name</label>
+                            <input type="text" name="name" id="name" placeholder="Your name" class="contact-info" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="topic">Topic</label>
+                            <select name="topic" id="topic" required>
+                                <option value="Youth Club Boys">Youth Club Boys </option>
+                                <option value="Youth Club Girls">Youth Club Girls</option>
+                                <option value="Adult Club">Adult Club</option>
+                                <ooption value="Ladies">Ladies ONLY </ooption>
+                                <option value="Join Kva" selected>Join KVA</option>
+                                <option value="Feedback">Feedback</option>
+                            </select>
+                        
+                        <div class="form-group">
+                            <label for="email"> Email</label>
+                            <input type="email" name="email" id="email" placeholder="Your email adress" class="contact-info" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message"> Message</label>
+                            <textarea name="message" placeholder="Please enter your message here." col="10" rows="10" required></textarea>
+                        </div>
+
+                        <div class="form-group" id="buttons">
+                            <button type="submit" value="send" class="btn"> Send</button>
+                            <button type="reset" value="cancel" class="btn">Reset</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

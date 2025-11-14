@@ -1,0 +1,207 @@
+
+
+/* Tokens */
+:root{
+  --primary-color: orange;
+  --secondary-color: black;
+  --accent-color: #0077c8;
+  --nav-bg: #111;
+  --text-color: #fff;
+  --ink:#fff; --muted:#dcdcdc;
+  --bg-top:#161616; --bg-bot:#0e0e0e;
+  --gradient: linear-gradient(90deg, orange, red);
+}
+
+body {
+    background-color:oklab(from black l a b);
+    width: 100%;
+}
+
+/* Container */
+.container {
+  width: min(1200px, 92vw);
+  margin-inline: auto;
+  box-sizing: border-box;
+
+}
+
+
+/* Header / Nav (no flex) */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--nav-bg) 95%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+nav {
+  padding: 10px 4vw;
+  overflow: hidden;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  float: right;
+  margin-top: 22px;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 20px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/*Form Styling */
+input,
+button,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+.form {
+    display: grid;
+    border: 5px solid var(--gradient);
+    border-radius: 6%;
+    padding-top: 7%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.form legend{
+    font-weight: 600;
+}
+.form-group{
+    display: grid;
+    gap: 0.3em;
+    margin-top: 1.2%;
+    align-items: center;
+    justify-self: space-evenly;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--ink);
+    padding-left: 1.7%;
+
+}
+
+input {
+    box-sizing: border-box;
+    background: rgb(85, 83, 83);
+    color: var(--text-color);
+    border: var(--gradient);
+    border-radius: 16px;
+    padding: 1ex 2ex;
+    width: 100%;
+}
+
+textarea {
+    background-color: rgb(85, 83, 83);
+    color: var(--text-color);
+    height: 140px;
+}
+
+.legend {
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(255, 119, 0); 
+}
+
+select {
+    background-color: rgb(90, 90, 90);
+    color: var(--ink);
+    border-radius: 16px;
+}
+
+
+
+/* Buttons */
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    font-size: 1.4rem;
+    padding: 12px;
+    border-radius: 7px;
+    border-color: rgb(255, 119, 0);
+    color: var(--ink);
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+.btn #send:hover,
+.btn #reset:hover,
+.btn #send:active,
+.btn #reset:active {
+    font-size: 1.5rem;
+    background-color:oklch(from inherit l c h);
+    border-color: oklch(linear-gradient rbg(255, 119, 0)) l c h;
+}
+
+#buttons {
+     display: inline-block;
+     padding-left: 40%;
+
+}
+
+/*text in elements animation when selected plus list elements style */
+ul li {
+    list-style-type: circle;
+    margin-left: 5px;
+}
+
+ul li:hover,
+ul li:active{
+    font-size: 1.3rem;
+    font-weight: 150;
+    color: transparent;
+    background: linear-gradient(90deg, orange, red);
+    list-style-type: default;
+    background-clip: text;
+    --webkit-background-clip: text;
+}
+
+a {
+    text-decoration: none;
+    color: transperent;
+    padding: 1.5%;
+}
+
+a:hover,
+a:focus-visible,
+.btn:hover,
+.btn:focus-visible {
+    color: transparent;
+    background: linear-gradient(90deg, orange, red);
+    background-clip: text;
+    --webkit-background-clip: text;
+}
+
