@@ -160,7 +160,7 @@ nav a:hover {
   }
 }
 
-/* Snapping */
+/* General and Scroll */
 html {
     scroll-snap-type: y relative;
     scroll-behavior: smooth;
@@ -172,6 +172,8 @@ section {
     height: 100vh;
     scroll-snap-align: center;
 }
+
+/*text animation */
 
 .autoShow {
     animation: text-appear both;
