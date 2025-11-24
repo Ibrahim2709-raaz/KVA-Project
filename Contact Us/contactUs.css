@@ -204,4 +204,12 @@ a:focus-visible,
     background-clip: text;
     --webkit-background-clip: text;
 }
+footer{
+  border-left: 3px solid orange;
+  border-radius: 3px;
+  background-color: black;
+  color: orange;
+  font-style:serif;
+  
+}
 
