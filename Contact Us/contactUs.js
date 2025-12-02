@@ -20,7 +20,7 @@ function showError(input, message) {
     form_group.classList.add('error');
 
 
-    const error = form_group.querySelector('error');
+    const error = form_group.querySelector('.error');
     error.textContent = message;
 }
 
@@ -29,8 +29,8 @@ function showSuccess(input) {
 
     //remove the error class
     form_group.classList.remove('error');
-    //form_group.classList.add('success'); -> optional
-
+    form_group.classList.add('success');
+    
     //hide error messages
     const error = form_group.querySelector('.error');
     error.textContent = '';
@@ -120,3 +120,6 @@ const debounce = (fn, delay = 300) => {
         }, delay);
     }
 }
+
+/*For reset I just added on click location.reload() -> which 
+does the same as reload button on the browser in the HTML code*/

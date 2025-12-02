@@ -221,7 +221,7 @@ a:focus-visible,
     color: transparent;
     background: linear-gradient(90deg, orange, red);
     background-clip: text;
-    --webkit-background-clip: text;
+    -webkit-background-clip: text;
 }
 footer{
   border-left: 3px solid orange;
@@ -232,15 +232,14 @@ footer{
   
 }
 
-/* Error message and input vvalidation styling */
+/* Error message and input validation styling */
 .form_group.error input,
 .form_group.error textarea {
-    background-color:oklch(from red l c h);
+    background-color:oklch(from rgb(161, 9, 9) l c h);
 }
 
-/*
-.form-group.success input,
+/*success styling */
+.form_group.success input,
 .form_group.success textarea {
-    background-color: oklch(from green l c h);
+    background-color: oklch(from rgb(255, 106, 0) l c h);
 }
-   -> optional */
