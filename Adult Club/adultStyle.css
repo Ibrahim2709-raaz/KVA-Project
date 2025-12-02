@@ -23,7 +23,6 @@ main {
 }
 
 
-/* Header / Nav (no flex) */
 header {
   position: sticky;
   top: 0;
@@ -64,13 +63,18 @@ nav ul li {
   margin-left: 20px;
 }
 
-nav a {
-  color: var(--text-color);
-  text-decoration: none;
+/* subtle hover lift */
+nav ul li a {
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.25s ease;
 }
 
-nav a:hover {
-  color: var(--brand);
+nav ul li a:hover {
+  transform: translateY(-2px);        /* ← subtle lift */
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* HERO */

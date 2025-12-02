@@ -71,6 +71,20 @@ nav a {
   color: var(--text-color);
   text-decoration: none;
 }
+nav ul li a {
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* Softer hover */
+nav ul li a:hover {
+  transform: translateY(-3px); /* was too much before — now subtle */
+  background: linear-gradient(90deg, orange, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 
 /*Form Styling */
 input,
