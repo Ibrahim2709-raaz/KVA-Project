@@ -819,56 +819,64 @@ body.is-loading{
 }
 
 
-   /* GRID (4 boxes) */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 500px) {
-      .grid { grid-template-columns: 1fr; }
-    }
-    /* CARD BOX */
-    .card {
-      position: relative;
-      background: #c77739;
-      height: 180px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius:15px;
-    }
-    /* HOVER INFO LAYER */
-    .info {
-      position: absolute;
-      top: 0; 
-      left: 0;
-      width: 319px;
-      height: 140px;
-      background: black;
-      color: orange;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      text-align: center;
-      opacity: 0%;
-      transition: 0.7s;
-      border-radius:15px;
-      border: 3px solid orange; 
-      border-style:inset;
-    }
-    .card:hover .info {
-      opacity: 1;
-    }
+/* GRID (4 boxes) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* CARD */
+.card {
+  position: relative;
+  background: #c77739;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* HOVER INFO LAYER — FIXED */
+.info {
+  position: absolute;
+  inset: 0;                         /* replaces width + height */
+  background: black;
+  color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  
+  opacity: 0;                       /* fixed */
+  transform: translateY(20px);      /* slide-up animation */
+  transition: opacity .45s ease, 
+              transform .45s ease;
+
+  border-radius: inherit;
+  border: 3px solid orange;
+  border-style: inset;
+}
+
+/* HOVER EFFECT */
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(0);         /* smooth motion */
+}
+
 footer{
   border-left: 3px solid orange;
   border-radius: 3px;
