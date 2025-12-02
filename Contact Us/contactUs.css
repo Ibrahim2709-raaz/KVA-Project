@@ -93,7 +93,7 @@ textarea {
 .form legend{
     font-weight: 600;
 }
-.form-group{
+.form_group{
     display: grid;
     gap: 0.3em;
     margin-top: 1.2%;
@@ -117,6 +117,7 @@ input {
     border-radius: 16px;
     padding: 1ex 2ex;
     width: 100%;
+
 }
 
 textarea {
@@ -135,6 +136,9 @@ select {
     background-color: rgb(90, 90, 90);
     color: var(--ink);
     border-radius: 16px;
+}
+input, textarea, select {
+    transition: background-color 0.3s ease;
 }
 
 
@@ -184,6 +188,7 @@ ul li:active{
     font-weight: 150;
     color: transparent;
     background: linear-gradient(90deg, orange, red);
+    transition: 0.3s ease;
     list-style-type: default;
     background-clip: text;
     --webkit-background-clip: text;
@@ -213,3 +218,15 @@ footer{
   
 }
 
+/* Error message and input vvalidation styling */
+.form_group.error input,
+.form_group.error textarea {
+    background-color:oklch(from red l c h);
+}
+
+/*
+.form-group.success input,
+.form_group.success textarea {
+    background-color: oklch(from green l c h);
+}
+   -> optional */

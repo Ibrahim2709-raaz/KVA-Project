@@ -58,13 +58,14 @@
                     <fieldset class="form">
                         <legend class="legend">Contact Us</legend>
                         
-                        <div class="form-group">
-                            <label for="name"> Name</label>
-                            <input type="text" name="name" id="name" placeholder="Your name" class="contact-info" required />
+                        <div class="form_group">
+                            <label for="name"> Name*</label>
+                            <input type="text" name="name" id="name" placeholder="Your name" class="contact-info" required minlength="3" oninput="checkName()"/>
+                            <span class="error" id="nameError"></span>
                         </div>
 
-                        <div class="form-group">
-                            <label for="topic">Topic</label>
+                        <div class="form_group">
+                            <label for="topic">Topic*</label>
                             <select name="topic" id="topic" required>
                                 <option value="Youth Club Boys">Youth Club Boys </option>
                                 <option value="Youth Club Girls">Youth Club Girls</option>
@@ -73,18 +74,21 @@
                                 <option value="Join Kva" selected>Join KVA</option>
                                 <option value="Feedback">Feedback</option>
                             </select>
-                        
-                        <div class="form-group">
-                            <label for="email"> Email</label>
-                            <input type="email" name="email" id="email" placeholder="Your email adress" class="contact-info" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="message"> Message</label>
-                            <textarea name="message" placeholder="Please enter your message here." col="10" rows="10" required></textarea>
+                        <div class="form_group">
+                            <label for="email"> Email*</label>
+                            <input type="email"  oninput="checkEmail()" name="email" id="email" placeholder="Your email adress" class="contact-info" required>
+                            <span class="error" id="emailError"></span>
                         </div>
 
-                        <div class="form-group" id="buttons">
+                        <div class="form_group">
+                            <label for="message"> Message*</label>
+                            <textarea name="message" oninput="checkMessage()" placeholder="Please enter your message here." col="10" rows="10" minlength ="20" maxlength="250"  required ></textarea>
+                            <span class="error" id="messageError"></span>
+                        </div>
+
+                        <div class="form_group" id="buttons">
                             <button type="submit" value="send" class="btn"> Send</button>
                             <button type="reset" value="cancel" class="btn">Reset</button>
                         </div>
@@ -96,5 +100,6 @@
     <footer class ="footer">
   <p>footer</p>
 </footer>
+<script src="contactUs.js"></script>
 </body>
 </html>
