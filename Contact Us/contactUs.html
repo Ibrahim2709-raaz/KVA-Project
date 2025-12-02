@@ -61,7 +61,7 @@
                         <div class="form_group">
                             <label for="name"> Name*</label>
                             <input type="text" name="name" id="name" placeholder="Your name" class="contact-info" required minlength="3" oninput="checkName()"/>
-                            <span class="error" id="nameError"></span>
+                            <span></span>
                         </div>
 
                         <div class="form_group">
@@ -90,7 +90,7 @@
 
                         <div class="form_group" id="buttons">
                             <button type="submit" value="send" class="btn"> Send</button>
-                            <button type="reset" value="cancel" class="btn">Reset</button>
+                            <button type="reset" value="cancel" class="btn" onclick="location.reload()">Reset</button>
                         </div>
                     </fieldset>
                 </form>
