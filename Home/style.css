@@ -39,6 +39,7 @@ header {
   border-bottom: 1px solid var(--nav-border);
 }
 
+/* NAV BASE */
 nav {
   padding: 10px 4vw;
   overflow: hidden;
@@ -70,13 +71,27 @@ nav ul li {
   margin-left: 20px;
 }
 
+/* CLEAN + SOFT ANIMATION */
 nav a {
   color: var(--text-color);
   text-decoration: none;
+  display: inline-block;
+
+  /* smooth micro-pop animation */
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
 }
 
-nav a:hover {
-  color: var(--brand);
+/* SOFT POP + GRADIENT EFFECT (very subtle) */
+nav a:hover,
+nav a:focus-visible {
+  transform: translateY(-2px);   /* ⬆ soft lift */
+  background: linear-gradient(90deg, orange, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* HERO */

@@ -21,20 +21,33 @@ img {
   background-color: #e3e3e3;
   border-bottom: 1px solid #ccc;
 }
+
 .nav {
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 16px;
 }
+
 .nav-link {
   text-decoration: none;
   color: #111;
   font-weight: 600;
+
+  /* subtle animation */
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
+
+/* Same soft hover animation as your other pages */
 .nav-link:hover {
-  text-decoration: underline;
+  transform: translateY(-3px); /* soft lift, not too much */
+  background: linear-gradient(90deg, orange, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
+
 /* Main Container */
 .container {
   max-width: 1100px;
