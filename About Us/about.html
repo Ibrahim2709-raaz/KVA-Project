@@ -4,240 +4,7 @@
   <title>About Us_KVA</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- FULL INLINE HOMEPAGE-STYLE CSS -->
-  <style>
-/* -------------------- ROOT COLORS -------------------- */
-:root {
-  --ink: #fff;
-  --muted: #cfcfcf;
-  --bg-top: #161616;
-  --bg-bot: #0e0e0e;
-  --brand: #ff9a1a;
-  --brand-2: #ffd699;
-  --nav-bg: #111;
-  --text-color: #f2f2f2;
-  --nav-border: rgba(255, 255, 255, .06);
-}
-
-/* RESET */
-* {margin:0; padding:0; box-sizing:border-box; font-family: "Playfair Display", serif;}
-body {background:#0e0e0e; color:white;
- background: linear-gradient(180deg, #0e0e0e, #0a0a0a, #000);
-  background-attachment: fixed;}
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.7) 100%);
-  z-index: -1;
-}
-
-
-/* -------------------- HEADER -------------------- */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: color-mix(in srgb, var(--nav-bg) 85%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--nav-border);
-  padding: 10px 0;
-}
-
-nav.container {
-  width: min(1200px, 92vw);
-  margin: auto;
-}
-
-.logo img {
-  height: 80px;
-  float: left;
-}
-
-.menu-toggle {
-  float: right;
-  font-size: 32px;
-  cursor: pointer;
-  color: white;
-  display: none;
-}
-
-.nav-links {
-  float: right;
-  margin-top: 25px;
-}
-
-nav ul {list-style:none;}
-nav ul li {display:inline-block; margin-left:25px;}
-nav a {color:white; text-decoration:none; font-size:1rem;}
-nav a:hover {color:var(--brand);}
-
-/* Mobile nav */
-@media (max-width:768px) {
-  .menu-toggle {display:block;}
-  .nav-links {display:none; width:100%; float:none; text-align:center;}
-  .nav-links.active {display:block;}
-  nav ul li {display:block; margin:15px 0;}
-}
-
-/* -------------------- HERO SECTION -------------------- */
-.hero-section {
-  background: linear-gradient(180deg, var(--bg-top), var(--bg-bot));
-  padding: 100px 0;
-  text-align:left;
-}
-
-.W-text {
-  font-size: 3rem;
-  font-weight: bold;
-}
-.W-text .hl {
-   background: linear-gradient(90deg, var(--brand), var(--brand-2));
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 10px rgba(255,165,0,0.7);
-  font-family: "Playfair Display", serif;
-}
-
-/* -------------------- CONTENT SECTIONS -------------------- */
-.container {
-  width: min(1200px, 92vw);
-  margin: 50px auto;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-
-/* About grid */
-.about-grid .card {
-  background:#c77739;
-  padding:20px;
-  border-radius:15px;
-
-  box-shadow:
-    0 12px 25px rgba(0, 0, 0, 0.55),
-    0 3px 8px rgba(0, 0, 0, 0.3);
-
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
-}
-
-.about-grid .card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.7),
-    0 6px 14px rgba(0, 0, 0, 0.35);
-}
-.about-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  margin-top:20px;
-}
-
-.card p {color:var(--muted); line-height:1.6;}
-
-/* Mission */
-.mission {
-  background:#111;
-  padding:28px;
-  border-radius:14px;
-}
-
-.mission p {color:var(--muted);}
-
-/* Cards */
-.grid {
-  display:grid; 
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-.card {
-  background:#c77739;
-  height:180px;
-  border-radius:15px;
-  position:relative;
-  display:flex; 
-  align-items:center; 
-  justify-content:center;
-  font-size:20px; 
-  color:white; 
-  font-weight:bold;
-  cursor:pointer;
-
-  /* shadows behind cars */
-  box-shadow: 
-    0 12px 25px rgba(0, 0, 0, 0.55),
-    0 3px 8px rgba(0, 0, 0, 0.3);
-
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
-}
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.7),
-    0 6px 14px rgba(0, 0, 0, 0.35);
-}
-/* glow behind card */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: rgba(255, 153, 26, 0.1);
-  filter: blur(25px);
-  z-index: -1;
-}
-.info {
-  position:absolute;
-  inset:0;
-  background:black;
-  color:orange;
-  border:3px inset orange;
-  border-radius:15px;
-  opacity:0;
-  display:flex; justify-content:center; align-items:center;
-  transition:.6s;
-}
-.card:hover .info {opacity:1;}
-
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
-
-/* -------------------- FOOTER -------------------- */
-footer {
-  background:black;
-  border-left:3px solid orange;
-  color:orange;
-  padding:15px;
-  margin-top:40px;
-}
-
-/* -------------------- SCROLL REVEAL -------------------- */
-.reveal {opacity:0; transform:translateY(12px); transition:.5s;}
-.reveal.in {opacity:1; transform:none;}
-
-.reveal-box {
-  opacity:0;
-  transform:translateY(30px);
-  transition:.6s ease;
-  padding:40px 0;
-  border-top:1px solid rgba(255,255,255,.1);
-  border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-.reveal-box.in-view {
-  opacity:1;
-  transform:none;
-}
-.hero-section.reveal {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-
-  </style>
+  <link rel="stylesheet" href="aboutus.css">
 </head>
 
 <body>
@@ -272,11 +39,11 @@ footer {
   <div class="container about-grid">
     <article class="card text-card">
       <h2>Organization Background</h2>
-      <p>random text....</p>
+      <p>KVA was created to address the growing need for structured, accessible, and high-quality volleyball training within our community. Our organization is built on a foundation of expert coaching, athlete-centered programs, and a commitment to integrity and professionalism. Today, we proudly serve athletes across multiple age groups and skill levels, supporting both personal and athletic advancement.</p>
     </article>
 
     <figure class="card image-card">
-      <img src="#####" alt="Team/Organization Image" style="border-radius:10px;">
+      <img src="###" alt="Team/Organization Image" style="border-radius:10px;">
     </figure>
   </div>
 </section>
@@ -285,23 +52,73 @@ footer {
 <section class="mission reveal-box">
   <div class="container">
     <h2>OUR MISSION</h2>
-    <p>random text....</p>
+    <p>Our mission is to deliver excellence in athlete development by combining expert coaching, 
+      structured training, and a commitment to integrity and teamwork. 
+      We strive to create an environment where every athlete can grow, challenge themselves, and excel both on and off the court. 
+      Through disciplined guidance and a strong community culture, we aim to inspire confidence, resilience, and lifelong passion for the sport.</p>
   </div>
 </section>
 
 <!-- CARDS -->
+
 <section class="reveal-box">
   <div class="container">
     <div class="grid">
-      <div class="card">TEAM VALUES <div class="info">Integrity, passion, focus.</div></div>
-      <div class="card">TEAM WORK <div class="info">Stronger together.</div></div>
-      <div class="card">THE COACHES <div class="info">Professional leadership.</div></div>
-      <div class="card">COMMUNITY <div class="info">Supportive environment.</div></div>
+
+      <!-- TEAM VALUES -->
+      <div class="card">
+        <div class="icon"><img src="Images/team values.png" alt="Icon"></div>
+        TEAM VALUES
+        <div class="info">
+          Our foundation is built on integrity, discipline, and respect—
+          shaping athletes who lead with strong character on and off the court.
+        </div>
+      </div>
+
+      <!-- TEAM WORK -->
+      <div class="card">
+        <div class="icon"><img src="Images/communitu icon.png" alt="Icon"></div>
+        TEAM WORK
+        <div class="info">
+          We believe in unity, trust, and collaboration. Athletes grow faster 
+          when they support and elevate one another.
+        </div>
+      </div>
+
+      <!-- THE COACHES -->
+      <div class="card">
+        <div class="icon"><img src="Images/coach icon.png" alt="Icon"></div>
+        THE COACHES
+        <div class="info">
+          Our coaching team provides expert instruction, positive leadership, 
+          and personalized development for every athlete.
+        </div>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="card">
+        <div class="icon"><img src="Images/communitu icon.png" alt="Icon"></div>
+        COMMUNITY
+        <div class="info">
+          We foster an inclusive, welcoming environment where athletes, families, 
+          and coaches work together to build long-term success.
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<footer>© KVA</footer>
+<!-- SPONSOR LOGO STRIP -->
+<section class="sponsor-strip">
+  <div class="sponsor-container">
+    <img src="Images/Harrison.png" alt="Sponsor 1">
+    <img src="Images/BCID_V_cmyk_pos-copy.png" alt="Sponsor 2">
+
+  </div>
+</section>
+
+<footer>© 2025 KAMLOOPS VOLLEYBALL ASSOCIATION</footer>
 
 <!-- JS -->
  <script src="about.js"></script>
