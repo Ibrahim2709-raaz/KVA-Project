@@ -25,53 +25,64 @@ body::before {
 }
 
 
-/* -------------------- HEADER -------------------- */
+/* Header / Nav (no flex) */
 header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--nav-bg) 85%, transparent);
+  background: color-mix(in srgb, var(--nav-bg) 95%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--nav-border);
-  padding: 10px 0;
 }
 
-nav.container {
-  width: min(1200px, 92vw);
-  margin: auto;
+nav {
+  padding: 10px 4vw;
+  overflow: hidden;
+}
+
+.logo {
+  float: left;
 }
 
 .logo img {
   height: 80px;
-  float: left;
-}
-
-.menu-toggle {
-  float: right;
-  font-size: 32px;
-  cursor: pointer;
-  color: white;
-  display: none;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
   float: right;
-  margin-top: 25px;
+  margin-top: 22px;
 }
 
-nav ul {list-style:none;}
-nav ul li {display:inline-block; margin-left:25px;}
-nav a {color:white; text-decoration:none; font-size:1rem;}
-nav a:hover {color:var(--brand);}
-
-/* Mobile nav */
-@media (max-width:768px) {
-  .menu-toggle {display:block;}
-  .nav-links {display:none; width:100%; float:none; text-align:center;}
-  .nav-links.active {display:block;}
-  nav ul li {display:block; margin:15px 0;}
+nav ul {
+  padding: 0;
+  margin: 0;
 }
 
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 20px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+nav ul li a {
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* Softer hover */
+nav ul li a:hover {
+  transform: translateY(-3px); /* was too much before — now subtle */
+  background: linear-gradient(90deg, orange, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+} 
 /* -------------------- HERO SECTION -------------------- */
 .hero-section {
   background: linear-gradient(180deg, var(--bg-top), var(--bg-bot));

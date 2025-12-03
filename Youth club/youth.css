@@ -52,10 +52,14 @@ body {
   z-index: 9999;
 }
 
-/* Nav (no sticky, no flex) */
+/* Header / Nav (no flex) */
 header {
-  background: var(--nav-bg);
-  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--nav-bg) 95%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--nav-border);
 }
 
 nav {
@@ -84,29 +88,28 @@ nav ul {
 }
 
 nav ul li {
-  list-style: none;
   display: inline-block;
+  list-style: none;
   margin-left: 20px;
 }
 
-/* Animation applied */
-nav ul li a {
+nav a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 18px;
+}
+nav ul li a {
   display: inline-block;
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* Subtle hover pop-up */
+/* Softer hover */
 nav ul li a:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px); /* was too much before — now subtle */
   background: linear-gradient(90deg, orange, red);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
-}
-
+} 
 /* Hamburger */
 .menu-toggle {
   display: none;
