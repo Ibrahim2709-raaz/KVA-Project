@@ -123,3 +123,55 @@ const debounce = (fn, delay = 300) => {
 
 /*For reset I just added on click location.reload() -> which 
 does the same as reload button on the browser in the HTML code*/
+
+(function(){
+  const overlay = document.getElementById('loader');
+  if (!overlay) return;
+
+  const MIN_SHOW_MS = 3000; // keep loader visible ~3s
+  let minTimerDone = false;
+  let pageReady = false;
+
+  // Prevent scroll while overlay is visible
+  document.body.classList.add('is-loading');
+
+  // Helper: hide overlay
+  function hideLoader(){
+    overlay.classList.add('is-done');
+    document.body.classList.remove('is-loading');
+    // fully remove from tree after fade
+    setTimeout(() => { overlay.style.display = 'none'; }, 450);
+  }
+
+  function tryFinish(){
+    if (minTimerDone && pageReady){
+      hideLoader();
+    }
+  }
+   // Wait at least MIN_SHOW_MS
+  setTimeout(() => { minTimerDone = true; tryFinish(); }, MIN_SHOW_MS);
+
+  // When page is fully loaded (images, CSS, etc.)
+  if (document.readyState === 'complete'){
+    pageReady = true; tryFinish();
+  } else {
+    window.addEventListener('load', () => { pageReady = true; tryFinish(); });
+  }
+
+  // Safety: if something blocks 'load', still hide after a hard cap (e.g., 6s)
+  setTimeout(() => {
+    if (!overlay.classList.contains('is-done')){
+      hideLoader();
+    }
+  }, 6000);
+
+  // Optional: allow closing on Esc or click (useful for development)
+  function devClose(e){
+    if (e.key === 'Escape'){
+      hideLoader();
+      window.removeEventListener('keydown', devClose);
+    }
+  }
+  window.addEventListener('keydown', devClose);
+  overlay.addEventListener('click', hideLoader);
+})();
