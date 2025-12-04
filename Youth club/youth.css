@@ -700,3 +700,56 @@ body.is-loading {
     margin-bottom: 20px;
   }
 }
+
+
+.countcontainer  {
+    display: inline-block;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    max-width: 900px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#countdown {
+    white-space: nowrap; /* forces all boxes into one row */
+    margin-top: 20px;
+}
+
+.time-box {
+    display: inline-block;
+    width: 150px;
+    margin: 0 10px;
+    padding: 18px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    vertical-align: top;
+}
+
+.label {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Responsive: Shrinks boxes but stays on one row */
+@media (max-width: 600px) {
+    .time-box {
+        width: 80px;
+        margin: 0 5px;
+        font-size: 1rem;
+        padding: 12px 5px;
+    }
+}
