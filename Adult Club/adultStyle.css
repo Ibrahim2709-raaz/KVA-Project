@@ -204,7 +204,7 @@ section {
 
 @keyframes autoBlurAnimation {
     0% {
-        filter: blur(10px);
+        filter: blur(1px);
     }
 
     35%, 45% {
@@ -212,11 +212,11 @@ section {
     }
 
     95% {
-        filter: blur(2px);
+        filter: blur(0px);
     }
 
     100% {
-        filter: blur(10px);
+        filter: blur(1px);
     }
 }
 
@@ -274,7 +274,7 @@ ul li:active{
 
 a {
     text-decoration: none;
-    color: transperent;
+    color: var(--text-color);
     padding: 1.5%;
 }
 
@@ -290,7 +290,7 @@ a:focus-visible{
 article {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    display: flow-root;
+    display: flow-root; /* */
     height: 1.15rem;
     overflow: hidden;
     transition: height ease 1s;

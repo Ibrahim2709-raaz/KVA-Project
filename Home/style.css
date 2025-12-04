@@ -165,7 +165,7 @@ nav a:focus-visible {
 }
 
 .btn[aria-busy="true"] {
-  pointer-events: none;
+  /*pointer-events: none;*/
   opacity: .65;
 }
 
