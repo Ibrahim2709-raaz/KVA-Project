@@ -63,10 +63,17 @@ nav ul li {
   margin-left: 20px;
 }
 
+nav::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* subtle hover lift */
 nav ul li a {
   display: inline-block;
   transition: transform 0.2s ease, color 0.25s ease;
+  white-space: nowrap;
 }
 
 nav ul li a:hover {

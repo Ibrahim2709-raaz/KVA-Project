@@ -872,3 +872,18 @@ body.is-loading{
   transform: translateY(0);         /* smooth motion */
 }
 
+/* addition for the links in the cards*/
+.card a {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.card a:hover {
+  transform: translateY(-3px); /* was too much before — now subtle */
+  background: linear-gradient(90deg, orange, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+

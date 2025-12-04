@@ -70,10 +70,16 @@ nav ul li {
 nav a {
   color: var(--text-color);
   text-decoration: none;
+  white-space: nowrap;
 }
 nav ul li a {
   display: inline-block;
   transition: transform 0.25s ease, color 0.25s ease;
+}
+nav::after{
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Softer hover */

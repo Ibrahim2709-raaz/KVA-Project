@@ -5,30 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery</title>
   <link rel="stylesheet" href="reset.css"/> 
-  <link rel="stylesheet" href="galleryStyleSheet.css?v=2" /> 
+  <link rel="stylesheet" href="galleryStyleSheet.css" />
+  <link rel="stylesheet" href="../footer.css"/>
 </head>
 <body>
 
-  <!-- Loading Splash -->
-<!--
-  <div id="loader" class="loader-overlay" aria-hidden="false">
-    <div class="loader-wrap" role="status" aria-live="polite" aria-label="Loading">
-      <div class="loader-circle">
-        <img src="../Images/logo.png" alt="KVA Logo" class="loader-logo" />
-        <svg class="loader-ring" viewBox="0 0 120 120" aria-hidden="true">
-          <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
-          <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
-        </svg>
-      </div>
-      <p class="loader-text">Loading…</p>
-    </div>
-  </div>
--->
   <!-- Navigation -->
     <header>
         <nav class="container">
         <div class="logo">
-            <img src="../Images/logo.png" alt="KVA Logo">
+            <a href="../Home/index.html">
+                <img src="../Images/logo.png" alt="KVA Logo">
+            </a>
         </div>
 
         <!-- Hamburger button -->
@@ -37,12 +25,13 @@
         </div>
 
         <div class="nav-links" id="navLinks">
-            <ul>
-            <li><a href="../Home/index.html">Home</a></li>
+          <ul>
             <li><a href="../Youth club/youth.html">Youth</a></li>
             <li><a href="../Adult Club/adult-club.html">Adult</a></li>
-            <li><a href="../Contact Us/contactUs.html">Contact</a></li>
-            </ul>
+            <li><a href="../Gallery/gallery.html"> Gallery</a></li>
+            <li><a href="../About Us/about.html">About Us</a></li>
+            <li><a href="../Contact Us/contactUs.html">Contact Us</a></li>
+          </ul>
         </div>
         </nav>
 
@@ -121,6 +110,43 @@
             </section> 
         </section>
     </main>
+
+    <footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>About Us</h3>
+      <p>Interested in Coaching?
+
+We are always looking for passionate coaches that want to pass on their love of the game.
+
+Whether you have just been thinking of coaching or coaching for many years we want to hear from you.</p>
+    </div>
+
+
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.instagram.com/kvapack/">Instagram</a>
+        <a href="https://www.facebook.com/kamvolleyball">Facebook</a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Email: ed@kamvolleyball.ca</p>
+      <p>Phone: +1 234 567 890</p>
+    </div>
+
+  </div>
+
+  <div class="bottom-footer">
+    <p>© 2025 Kamloops Volleyball Association. All rights reserved.</p>
+    <p>Last Updated: <span id="lastUpdated"></span></p>
+  </div>
+</footer>
+
 
 </body>
 </html>

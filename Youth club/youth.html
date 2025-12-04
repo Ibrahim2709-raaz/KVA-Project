@@ -30,7 +30,9 @@
   <header>
       <nav class="container">
         <div class="logo">
-          <img src="../Images/logo.png" alt="KVA Logo">
+          <a href="../Home/index.html">
+            <img src="../Images/logo.png" alt="KVA Logo">
+          </a>
         </div>
 
         <!-- Hamburger button -->
@@ -40,10 +42,11 @@
 
         <div class="nav-links" id="navLinks">
           <ul>
-            <li><a href="../About Us/about.html">About Us</a></li>
             <li><a href="../Youth club/youth.html">Youth</a></li>
             <li><a href="../Adult Club/adult-club.html">Adult</a></li>
-            <li><a href="contactUs.html">Contact</a></li>
+            <li><a href="../Gallery/gallery.html"> Gallery</a></li>
+            <li><a href="../About Us/about.html">About Us</a></li>
+            <li><a href="../Contact Us/contactUs.html">Contact Us</a></li>
           </ul>
         </div>
       </nav>
@@ -60,8 +63,8 @@
           <h1 id="hero-title">2025 Club Tryout Registration</h1>
           <p>Registration opens October 15th at 9:00AM and will close on November 15th at 12:00PM.</p>
           <div class="hero-actions">
-            <a href="#" class="btn btn-primary">Register Now</a>
-            <a href="#" class="btn btn-ghost">Learn More</a>
+            <a href="../Contact Us/contactUs.html" class="btn btn-primary">Register Now</a>
+            <a onclick="window.location.href='#jumpHere'" class="btn">Learn More</a>
           </div>
         </div>
         <figure class="hero-image">
@@ -104,7 +107,7 @@
             <div id="minutes">00</div>
             <div class="label">Minutes</div>
         </div>
-        <div class="time-box">
+        <div class="time-box" id="jumpHere">
             <div id="seconds">00</div>
             <div class="label">Seconds</div>
         </div>

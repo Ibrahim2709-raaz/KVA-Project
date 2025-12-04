@@ -62,11 +62,12 @@ nav ul li {
   display: inline-block;
   list-style: none;
   margin-left: 20px;
-}
+} 
 
 nav a {
   color: var(--text-color);
   text-decoration: none;
+  white-space: nowrap;
 }
 nav ul li a {
   display: inline-block;
@@ -81,6 +82,12 @@ nav ul li a:hover {
   -webkit-background-clip: text;
   color: transparent;
 } 
+
+nav::after{
+  content: "";
+  display: table;
+  clear: both;
+}
 /* HERO */
 .hero-section{
   color:var(--ink);
@@ -311,7 +318,7 @@ h2 {
     color: transparent;
     background: linear-gradient(90deg, orange, red);
     background-clip: text;
-    --webkit-background-clip: text;
+    -webkit-background-clip: text;
 }
 
 h4{
