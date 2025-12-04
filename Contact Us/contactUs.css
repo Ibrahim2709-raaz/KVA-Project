@@ -243,3 +243,91 @@ footer{
 .form_group.success textarea {
     background-color: oklch(from rgb(255, 106, 0) l c h);
 }
+
+.loader-overlay{
+  position: fixed; inset: 0;
+  background: radial-gradient(120% 120% at 50% 40%, #0f0f0f 0%, #0b0b0b 55%, #050505 100%);
+  z-index: 99999;
+  opacity: 1; 
+  transition: opacity .4s ease;
+}
+
+/* Center the loader with absolute positioning (no flex) */
+.loader-wrap{
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+/* Circle container */
+.loader-circle{
+  position: relative;
+  width: 160px; height: 160px;
+  margin: 0 auto 14px auto;
+}
+
+/* Logo inside */
+.loader-logo{
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px; height: 84px; object-fit: contain; display: block;
+  border-radius: 50%; /* if your logo has transparent bg, looks neat */
+}
+
+/* SVG ring */
+.loader-ring{
+  width: 160px; height: 160px; display: block;
+}
+
+/* Base ring (subtle) */
+.ring-bg{
+  fill: none;
+  stroke: rgba(255,255,255,.12);
+  stroke-width: 6;
+}
+
+/* Animated ring (line running around border) */
+.ring-fg{
+  fill: none;
+  stroke: #ff9a1a; /* brand-ish */
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 326;      /* ~circumference for r=52 -> 2πr ≈ 326 */
+  stroke-dashoffset: 326;     /* start hidden */
+  animation: kvaRing 3s ease-in-out forwards;
+  filter: drop-shadow(0 0 8px rgba(255,154,26,.5));
+}
+
+/* Animate dash offset so the line sweeps the circle once in ~3s */
+@keyframes kvaRing{
+  0%   { stroke-dashoffset: 326; }
+  20%  { stroke-dashoffset: 220; }
+  50%  { stroke-dashoffset: 100; }
+  80%  { stroke-dashoffset: 10; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Loader text */
+.loader-text{
+  margin-top: 6px;
+  font-size: 0.95rem;
+  opacity: .85;
+}
+
+/* Hide overlay when done */
+.loader-overlay.is-done{
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Prevent scroll while loading */
+body.is-loading{
+  overflow: hidden;
+}
+
+/* Reduced motion: skip the animation & fade quickly */
+@media (prefers-reduced-motion: reduce){
+  .ring-fg{ animation: none; stroke-dashoffset: 0; }
+  .loader-overlay{ transition: opacity .1s linear; }
+}
