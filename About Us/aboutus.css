@@ -309,7 +309,19 @@ section h2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
+/* -------------------- FOOTER -------------------- */
+footer {
+  background:black;
+  border-left:1px solid orange;
+  color:orange;
+  padding:15px;
+  margin-top:40px;
+  text-align: center;
+  border-right:1px solid orange;
+}
+footer a img {
+  vertical-align: middle;
+}
 /* -------------------- SCROLL REVEAL -------------------- */
 .reveal {
   opacity: 0;
@@ -429,3 +441,4 @@ body.is-loading{
   .ring-fg{ animation: none; stroke-dashoffset: 0; }
   .loader-overlay{ transition: opacity .1s linear; }
 }
+
