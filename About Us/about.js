@@ -96,3 +96,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealElements.forEach((el) => observer.observe(el));
 })();
+(function () {
+  const lastUpdated = document.lastModified; // Get last modified date
+  const lastUpdatedElement = document.getElementById("last-updated"); // The span where we want to show the date
+  
+  if (lastUpdatedElement) {
+    // Format the date into a readable format
+    const formattedDate = new Date(lastUpdated).toLocaleDateString();
+    
+    // Set the last updated date inside the span
+    lastUpdatedElement.textContent = `Last updated: ${formattedDate}`;
+  }
+})();
