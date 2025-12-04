@@ -254,3 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   boxes.forEach(b=>observer.observe(b));
 })();
+
+// Get the last modified date of the document
+const lastModified = document.lastModified;
+
+// Put it inside the footer span
+document.getElementById("lastUpdated").textContent = lastModified;

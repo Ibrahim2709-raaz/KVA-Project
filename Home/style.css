@@ -34,12 +34,11 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--nav-bg) 85%, transparent);
+  background: color-mix(in srgb, var(--nav-bg) 95%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--nav-border);
 }
 
-/* NAV BASE */
 nav {
   padding: 10px 4vw;
   overflow: hidden;
@@ -71,29 +70,23 @@ nav ul li {
   margin-left: 20px;
 }
 
-/* CLEAN + SOFT ANIMATION */
 nav a {
   color: var(--text-color);
   text-decoration: none;
+}
+nav ul li a {
   display: inline-block;
-
-  /* smooth micro-pop animation */
-  transition:
-    transform 0.25s ease,
-    color 0.25s ease,
-    background 0.25s ease;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* SOFT POP + GRADIENT EFFECT (very subtle) */
-nav a:hover,
-nav a:focus-visible {
-  transform: translateY(-2px);   /* ⬆ soft lift */
+/* Softer hover */
+nav ul li a:hover {
+  transform: translateY(-3px); /* was too much before — now subtle */
   background: linear-gradient(90deg, orange, red);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-}
-
+} 
 /* HERO */
 .hero-section {
   color: var(--ink);
@@ -535,7 +528,9 @@ nav a:focus-visible {
 .ss-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;  /* prevents zoom/cropping */
+  background: #fff;      /* optional: looks cleaner */
+  padding: 6px;          /* optional: gives breathing room */
   display: block;
 }
 
@@ -877,11 +872,3 @@ body.is-loading{
   transform: translateY(0);         /* smooth motion */
 }
 
-footer{
-  border-left: 3px solid orange;
-  border-radius: 3px;
-  background-color: black;
-  color: orange;
-  font-style:serif;
-  
-}

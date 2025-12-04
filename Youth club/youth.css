@@ -52,10 +52,14 @@ body {
   z-index: 9999;
 }
 
-/* Nav (no sticky, no flex) */
+/* Header / Nav (no flex) */
 header {
-  background: var(--nav-bg);
-  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--nav-bg) 95%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--nav-border);
 }
 
 nav {
@@ -84,29 +88,28 @@ nav ul {
 }
 
 nav ul li {
-  list-style: none;
   display: inline-block;
+  list-style: none;
   margin-left: 20px;
 }
 
-/* Animation applied */
-nav ul li a {
+nav a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 18px;
+}
+nav ul li a {
   display: inline-block;
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* Subtle hover pop-up */
+/* Softer hover */
 nav ul li a:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px); /* was too much before — now subtle */
   background: linear-gradient(90deg, orange, red);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
-}
-
+} 
 /* Hamburger */
 .menu-toggle {
   display: none;
@@ -696,4 +699,57 @@ body.is-loading {
   .tryout-right {
     margin-bottom: 20px;
   }
+}
+
+
+.countcontainer  {
+    display: inline-block;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    max-width: 900px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#countdown {
+    white-space: nowrap; /* forces all boxes into one row */
+    margin-top: 20px;
+}
+
+.time-box {
+    display: inline-block;
+    width: 150px;
+    margin: 0 10px;
+    padding: 18px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    vertical-align: top;
+}
+
+.label {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Responsive: Shrinks boxes but stays on one row */
+@media (max-width: 600px) {
+    .time-box {
+        width: 80px;
+        margin: 0 5px;
+        font-size: 1rem;
+        padding: 12px 5px;
+    }
 }
