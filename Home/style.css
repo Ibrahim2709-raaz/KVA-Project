@@ -912,6 +912,36 @@ body.is-loading{
 @media (max-width: 500px) {
   .grid { grid-template-columns: 1fr; }
 }
+/* Learn more button*/
+.btn {
+  display: inline-block;
+  margin-top: 12px; 
+  padding: .9rem 1.25rem;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--brand) 45%, #fff 0%);
+  text-decoration: none;
+  font-weight: 700;
+  color: #101010;
+  background: var(--brand);
+  transition: transform .25s, box-shadow .25s, background .25s, border-color .25s;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--brand) 55%, #fff 0%);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ring);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px #000, 0 0 0 6px color-mix(in srgb, var(--brand) 55%, transparent);
+}
+
 
 /* CARD */
 .card {
