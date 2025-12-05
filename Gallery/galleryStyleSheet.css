@@ -1,19 +1,20 @@
-/* Tokens */
+/* ROOT TOKENS */
 :root{
   --primary-color: orange;
   --secondary-color: black;
   --accent-color: #0077c8;
   --nav-bg: #111;
   --text-color: #fff;
-  --ink:#fff; --muted:#dcdcdc;
-  --bg-top:#161616; --bg-bot:#0e0e0e;
+  --ink:#fff; 
+  --muted:#dcdcdc;
+  --bg-top:#161616; 
+  --bg-bot:#0e0e0e;
   --gradient: linear-gradient(90deg, orange, red);
- 
 }
-
 
 body {
     background-color: black;
+    margin: 0;
 }
 
 /* Container */
@@ -22,7 +23,7 @@ body {
   margin-inline: auto;
 }
 
-
+/* HEADER */
 header {
   position: sticky;
   top: 0;
@@ -34,11 +35,9 @@ header {
 
 nav {
   padding: 10px 4vw;
-  overflow: hidden;
-}
-
-.logo {
-  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo img {
@@ -47,41 +46,65 @@ nav {
   display: block;
 }
 
-.nav-links {
-  float: right;
-  margin-top: 22px;
-}
-
-nav ul {
-  padding: 0;
+/* NAV LINKS */
+.nav-links ul {
+  display: flex;
+  gap: 25px;
   margin: 0;
+  padding: 0;
 }
 
-nav ul li {
-  display: inline-block;
+.nav-links li {
   list-style: none;
-  margin-left: 20px;
 }
 
-nav::after{
-  content: "";
-  display: table;
-  clear: both;
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: transform 0.2s, color 0.25s;
 }
 
-/* subtle hover lift */
-nav ul li a {
-  display: inline-block;
-  transition: transform 0.2s ease, color 0.25s ease;
-  white-space: nowrap;
-}
-
-nav ul li a:hover {
-  transform: translateY(-2px);        /* ← subtle lift */
+.nav-links a:hover {
+  transform: translateY(-2px);
   background: var(--gradient);
-  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: white;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #111;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 /* HERO */
@@ -90,205 +113,109 @@ nav ul li a:hover {
   background: linear-gradient(180deg,var(--bg-top),var(--bg-bot));
   padding: clamp(48px, 7vw, 96px) 0;
 }
+
 .hero-grid{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
   gap: clamp(16px, 4vw, 40px);
   align-items:center;
 }
-.hero-text h1{
-  font-size: clamp(2.1rem, 4.5vw, 4rem);
-  line-height:1.1;
-  text-shadow: 0 2px 18px rgba(255,165,0,.08);
-}
-.W-text {
-  font-size: clamp(2.2rem, 4.5vw, 4.2rem);
-  line-height: 1.08;
-  letter-spacing: .2px;
-  text-shadow: 0 2px 18px rgba(255, 165, 0, .08);
+
+.hero-image img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
-.hero-actions{ margin-top: clamp(16px, 2.2vw, 24px); }
-.hero-image{
-  display:grid; place-items:center;
-  width:100%; max-width:520px; aspect-ratio:1/1;
-  border-radius:20px; overflow:hidden; background:none; border:none; box-shadow:none;
-}
-.hero-image img{ width:100%; height:100%; object-fit:contain; display:block; }
-
-/* Hide hero image on mobile (as in your other page) */
 @media (max-width:768px){
-  .hero-image{ display:none; }
   .hero-grid{ grid-template-columns: 1fr; }
-  .hero-text{ text-align:center; }
-  .hero-actions{ text-align:center; }
+  .hero-image{ display:none; }
 }
 
-
-
-
-
-
-
-/* General and Scroll */
-html {
-    scroll-snap-type: y relative;
-    scroll-behavior: smooth;
-    text-wrap: balance;
-    interpolate-size: allow-keywords;
+/* GENERAL MEDIA */
+img, video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
 }
 
-img {
-    display: inline-block;
-    object-fit:cover;
-    vertical-align: middle;
-    
-}
-
-video {
-    width: 650px;
-    height: 500px;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    color: var(--text-color);
-    padding: 1.5%;
-}
-
-a:hover,
-a:focus-visible{
-    color: transparent;
-    background: linear-gradient(90deg, orange, red);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-ul li {
-    list-style-type: circle;
-    margin-left: 5px;
-}
-
-ul li:hover,
-ul li:active{
-    font-size: 1.3rem;
-    font-weight: 150;
-    color: transparent;
-    background: linear-gradient(90deg, orange, red);
-    list-style-type: default;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-
+/* TITLES */
 .title {
-    text-align: center;
-    font-size: clamp(2.2em, 4.5vw, 4.2rem);
-    line-height: 1.08;
-    letter-spacing: 0.2px;
-    color: transparent;
-    background: linear-gradient(90deg, orange, red);
-    background-clip: text;
-    -webkit-background-clip: text;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: transparent;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  margin-top: 40px;
 }
 
-#h1 {
-  font-size: 25vh;
-}
-
-
-/*Styling */
-
- .row{
+/* GRID ROWS */
+.row{
+  width: min(1200px, 92vw);
+  margin: 20px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 1.5%;
-  padding: 3%;
-  gap: 1%;
-  width: 75%;
-  justify-content: space-evenly;
-  
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
 }
 
-/* smaller screen responsive layout with one picture */
-@media (max-width: 600px) {
-    .row {
-        grid-template-columns: 1fr;
-    }
-}
-
-.row div {
-    clear: both;
-    float:left;
-    margin: 1.5%;
-}
-
-
-/* polygon shape*/
+/* POLYGON IMAGE CONTAINERS */
 .clipped-border {
-    -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%); 
-    padding: 5px;
-    background: linear-gradient(red,orange);
-    transition: transform 0.2s;
-    cursor: pointer;
+  -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/3;
+  padding: 5px;
+  background: linear-gradient(red,orange);
+  transition: transform 0.2s;
 }
-
-
 
 .clipped-border:hover {
-    transform: scale(1.2);
-    transition: trasform 0.3s;
-    z-index: 10;
+  transform: scale(1.1);
 }
 
-/*Pictures by id*/
+/* BEACH IMAGES */
+#Beach1, #Beach2, #Beach3, #Beach4, #Beach5 {
+  background-size: cover;
+  background-position: center;
+}
+
+/* RESPONSIVE VIDEOS */
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
 #Beach1 {
-  width: 650px;
-  height: 500px;
-  background-color: lightsalmon;
-  background-image:url('Images/beach.png');
-  background-size:100% 100%;
-
+  background-image: url("Images/beach.png");
+  background-size: cover;
+  background-position: center;
 }
 
 #Beach2 {
-  width: 650px;
-  height: 500px;
-  background-color: lightsalmon;
-  background-image:url('Images/beach2.png');
-  background-size:100% 100%;
-
+  background-image: url("Images/beach2.png");
+  background-size: cover;
+  background-position: center;
 }
 
 #Beach3 {
-  width: 650px;
-  height: 500px;
-  background-color: lightsalmon;
-  background-image:url('Images/beach3.png');
-  background-size:100% 100%;
-
+  background-image: url("Images/beach3.png");
+  background-size: cover;
+  background-position: center;
 }
 
 #Beach4 {
-  width: 650px;
-  height: 500px;
-  background-color: lightsalmon;
-  background-image:url('Images/beach4.png');
-  background-size:100% 100%;
-
+  background-image: url("Images/beach4.png");
+  background-size: cover;
+  background-position: center;
 }
 
 #Beach5 {
-  width: 650px;
-  height: 500px;
-  background-color: lightsalmon;
-  background-image:url('Images/beach5.png');
-  background-size:100% 100%;
-
+  background-image: url("Images/beach5.png");
+  background-size: cover;
+  background-position: center;
 }
 
