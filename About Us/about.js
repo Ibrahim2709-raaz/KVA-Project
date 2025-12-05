@@ -45,23 +45,17 @@
 })();
 
 
-// ***************************
-// Mobile Hamburger Menu Toggle
-// ***************************
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menuToggle");
+// Mobile hamburger toggle
+ const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
 
-  if (!menuToggle || !navLinks) return;
-
   menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+    navLinks.classList.toggle("open");
 
+    // Update accessibility attribute
     const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!expanded));
-    menuToggle.innerHTML = expanded ? "&#9776;" : "&#10005;";
+    menuToggle.setAttribute("aria-expanded", !expanded);
   });
-});
 
 
 // ***************************

@@ -146,7 +146,20 @@ Whether you have just been thinking of coaching or coaching for many years we wa
     <p>Last Updated: <span id="lastUpdated"></span></p>
   </div>
 </footer>
+<script>
+  // Mobile hamburger toggle
+ const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
 
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+
+    // Update accessibility attribute
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", !expanded);
+  });
+
+</script>
 
 </body>
 </html>

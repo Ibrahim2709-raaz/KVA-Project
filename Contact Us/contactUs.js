@@ -175,3 +175,16 @@ does the same as reload button on the browser in the HTML code*/
   window.addEventListener('keydown', devClose);
   overlay.addEventListener('click', hideLoader);
 })();
+
+
+// Mobile hamburger toggle
+ const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+
+    // Update accessibility attribute
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", !expanded);
+  });

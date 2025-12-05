@@ -29,11 +29,11 @@
 }
 
 
-/* Header / Nav (no flex) */
+/* Header / Nav */
 header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 999; /* Keep nav above all content */
   background: color-mix(in srgb, var(--nav-bg) 95%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--nav-border);
@@ -42,8 +42,10 @@ header {
 nav {
   padding: 10px 4vw;
   overflow: hidden;
+  position: relative;
 }
 
+/* Logo */
 .logo {
   float: left;
 }
@@ -54,14 +56,15 @@ nav {
   display: block;
 }
 
+/* Desktop nav links */
 .nav-links {
   float: right;
   margin-top: 22px;
 }
 
 nav ul {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 nav ul li {
@@ -74,19 +77,70 @@ nav a {
   color: var(--text-color);
   text-decoration: none;
 }
+
 nav ul li a {
   display: inline-block;
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* Softer hover */
+/* Hover */
 nav ul li a:hover {
-  transform: translateY(-3px); /* was too much before — now subtle */
+  transform: translateY(-3px);
   background: linear-gradient(90deg, orange, red);
-  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-} 
+}
+
+/* -------------------- HAMBURGER BUTTON -------------------- */
+
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  font-size: 34px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: absolute;
+  right: 4vw;
+  top: 26px;
+  background: var(--bg-bot);
+  color: var(--ink);
+  z-index: 1000;
+  border: 1px solid var(--nav-border);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+/* Tablet + Mobile */
+@media (max-width: 900px) {
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide desktop menu */
+  .nav-links {
+    display: none;
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 65px;
+    background: var(--bg-bot);
+    padding: 15px 0;
+    border-radius: 8px;
+  }
+
+  /* When menu is open */
+  .nav-links.open {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 12px 0;
+  }
+}
+
 /* HERO */
 .hero-section {
   color: var(--ink);
@@ -302,8 +356,8 @@ nav ul li a:hover {
   width:100%;
 }
 
-/*Congrats section styling */
-#dark-section{
+/* Congrats section styling */
+#dark-section {
   background-image: linear-gradient(to top,
     var(--muted) 0.5%,
     var(--bg-bot) 3%, 
@@ -312,35 +366,66 @@ nav ul li a:hover {
     var(--bg-bot) 100%
   );
   border-radius: 2%;
+  padding: 2rem 0;
 }
 
-.congrats-container{
+.congrats-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: auto;
-  gap: 2%;
-  height: 100%;
+  gap: 2rem;
   width: 75%;
+  align-items: center;
 }
-  
-.congrats-container div{
+
+.congrats-container div {
   padding: 1%;
-  font-size: 1.5em;
+  font-size: 1.8rem;
   text-align: center;
   color: var(--ink);
-  text-shadow: 2px, 2px var(--text-color);
   font-weight: bolder;
+  /* Removing text-shadow typo */
+  text-shadow: 2px 2px var(--text-color);
 }
-  
+
 #pic {
-  width: 650px;
-  height: 500px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   border-radius: 5%;
-  background-color: lightsalmon;
-  background-image:url('../Images/2024-18U-National.jpg');
-  background-size:100% 100%;
+  background-image: url('../Images/2024-18U-National.jpg');
+  background-size: cover;
+  background-position: center;
 }
-  
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .congrats-container {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+
+  .congrats-container div {
+    font-size: 1.4rem;
+  }
+
+  #pic {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .congrats-container div {
+    font-size: 1.2rem;
+  }
+
+  #pic {
+    aspect-ratio: 3 / 2;
+  }
+}
+
 /*News and events styling*/
 .news-events-container {
   border: none;

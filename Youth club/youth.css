@@ -52,11 +52,11 @@ body {
   z-index: 9999;
 }
 
-/* Header / Nav (no flex) */
+/* Header / Nav */
 header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 999; /* Keep nav above all content */
   background: color-mix(in srgb, var(--nav-bg) 95%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--nav-border);
@@ -65,8 +65,10 @@ header {
 nav {
   padding: 10px 4vw;
   overflow: hidden;
+  position: relative;
 }
 
+/* Logo */
 .logo {
   float: left;
 }
@@ -77,14 +79,15 @@ nav {
   display: block;
 }
 
+/* Desktop nav links */
 .nav-links {
   float: right;
   margin-top: 22px;
 }
 
 nav ul {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 nav ul li {
@@ -97,64 +100,67 @@ nav a {
   color: var(--text-color);
   text-decoration: none;
 }
+
 nav ul li a {
   display: inline-block;
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* Softer hover */
+/* Hover */
 nav ul li a:hover {
-  transform: translateY(-3px); /* was too much before — now subtle */
+  transform: translateY(-3px);
   background: linear-gradient(90deg, orange, red);
-  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-} 
-/* Hamburger */
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  color: var(--text-color);
-  cursor: pointer;
-  float: right;
-  margin-top: 25px;
 }
 
-@media (max-width:768px) {
-  .logo {
-    display: none;
-  }
+/* -------------------- HAMBURGER BUTTON -------------------- */
 
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  font-size: 34px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: absolute;
+  right: 4vw;
+  top: 26px;
+  background: var(--bg-bot);
+  color: var(--ink);
+  z-index: 1000;
+  border: 1px solid var(--nav-border);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+/* Tablet + Mobile */
+@media (max-width: 900px) {
+
+  /* Show hamburger */
   .menu-toggle {
     display: block;
   }
 
+  /* Hide desktop menu */
   .nav-links {
     display: none;
+    float: none;
     width: 100%;
-    background: var(--nav-bg);
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, .06);
-    clear: both;
+    margin-top: 65px;
+    background: var(--bg-bot);
+    padding: 15px 0;
+    border-radius: 8px;
   }
 
-  .nav-links.active {
-    display: block;
-    animation: slideDown .35s ease forwards;
-  }
-
-  nav ul {
+  /* When menu is open */
+  .nav-links.open {
     display: block;
   }
 
   nav ul li {
     display: block;
-    margin: 14px 0;
-  }
-
-  nav a {
-    display: inline-block;
-    padding: 6px 0;
+    margin: 12px 0;
   }
 }
 
