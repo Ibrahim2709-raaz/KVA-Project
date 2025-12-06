@@ -1000,5 +1000,8 @@ body.is-loading{
   -webkit-background-clip: text;
   color: transparent;
 }
+footer a img {
+  vertical-align: middle;
+}
 
 
