@@ -4,15 +4,16 @@
 const nameEl = document.querySelector('#name');
 const emailEl = document.querySelector('#email');
 const messageEl = document.querySelector('#message');
-
+const form = document.querySelector('form');
 
 
 const isRequired = value => value === '' ? false : true;
 const isBetween = (length, min, max) => length < min || length > max ? false : true;
 const isEmailValid = (email) => {
-    const rePattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const rePattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return rePattern.test(email);
 }
+
 
 function showError(input, message) {
     const form_group = input.parentElement;
@@ -20,7 +21,7 @@ function showError(input, message) {
     form_group.classList.add('error');
 
 
-    const error = form_group.querySelector('.error');
+    const error = form_group.querySelector('small');
     error.textContent = message;
 }
 
@@ -32,7 +33,7 @@ function showSuccess(input) {
     form_group.classList.add('success');
     
     //hide error messages
-    const error = form_group.querySelector('.error');
+    const error = form_group.querySelector('small');
     error.textContent = '';
 }
 
@@ -43,9 +44,9 @@ function checkName(){
     const name = nameEl.value.trim();
 
     if(!isRequired(name)){
-        showError(userEl, 'Username cannot be blank!');
+        showError(nameEl, 'Name field cannot be blank!');
     } else if (!isBetween(name.length, min ,max)){
-        showError(nameEl, `Name characters must be betweem ${min} and ${max} characters!`);
+        showError(nameEl, `Name characters must be between ${min} and ${max} characters!`);
     } else {
         showSuccess(nameEl);
         valid = true;
@@ -54,58 +55,7 @@ function checkName(){
     return valid;
 }
 
-//validating the email address
-function checkEmail(){
-    let valid = false;
-    const email = emailEl.value.trim();
-
-    if(!isRequired(email)){
-        showError(emailEl, 'Email cannot be empty!');
-    } else if(!isEmailValid(email)){
-        showError(emailEl, 'Please enter a valid email address!');
-    } else {
-        showSuccess(emailEl);
-        valid = true;
-    }
-
-    return valid;
-}
-
-//validating the message input field
-function checkMessage(){
-    let valid = false;
-    const message = messageEl.value.trim();
-
-    let min = 20, max = 250;
-
-    if(!isRequired(message)){
-        showError(messageEl, 'Message cannot be blank!');
-    } else if(!isBetween(message.length, min, max)){
-        showError(messageEl, `Message must be between ${min} and ${max} characters!`);
-    } else {
-        showSuccess(messageEl);
-        valid = true;
-    }
-
-    return valid;
-}
-
-const form = document.querySelector('form');
-
-form.addEventListener('input', debounce(function(e) {
-   switch(e.target.id){
-        case "name":
-            checkName();
-            break;
-        case "email":
-              checkEmail();
-              break;
-        case "message":
-            checkMessage();
-            break;  
-   }
-}));
-
+//avoiding constant feedback to minimise a
 const debounce = (fn, delay = 300) => {
     let timeoutId;
 
@@ -121,60 +71,69 @@ const debounce = (fn, delay = 300) => {
     }
 }
 
-/*For reset I just added on click location.reload() -> which 
-does the same as reload button on the browser in the HTML code*/
+//validating the email address
+function checkEmail(){
+    let valid = false;
+    const email = emailEl.value.trim();
 
-(function(){
-  const overlay = document.getElementById('loader');
-  if (!overlay) return;
-
-  const MIN_SHOW_MS = 3000; // keep loader visible ~3s
-  let minTimerDone = false;
-  let pageReady = false;
-
-  // Prevent scroll while overlay is visible
-  document.body.classList.add('is-loading');
-
-  // Helper: hide overlay
-  function hideLoader(){
-    overlay.classList.add('is-done');
-    document.body.classList.remove('is-loading');
-    // fully remove from tree after fade
-    setTimeout(() => { overlay.style.display = 'none'; }, 450);
-  }
-
-  function tryFinish(){
-    if (minTimerDone && pageReady){
-      hideLoader();
+    if(!isRequired(email)){
+        showError(emailEl, 'Email cannot be empty!');
+    } else if(!isEmailValid(email)){
+        showError(emailEl, 'Please, enter a valid email address!');
+    } else {
+        showSuccess(emailEl);
+        valid = true;
     }
-  }
-   // Wait at least MIN_SHOW_MS
-  setTimeout(() => { minTimerDone = true; tryFinish(); }, MIN_SHOW_MS);
 
-  // When page is fully loaded (images, CSS, etc.)
-  if (document.readyState === 'complete'){
-    pageReady = true; tryFinish();
-  } else {
-    window.addEventListener('load', () => { pageReady = true; tryFinish(); });
-  }
+    return valid;
+}
 
-  // Safety: if something blocks 'load', still hide after a hard cap (e.g., 6s)
-  setTimeout(() => {
-    if (!overlay.classList.contains('is-done')){
-      hideLoader();
+//live validation of the input
+function checkMessage(){
+    let valid = false;
+    const message = messageEl.value.trim();
+
+    let min = 20, max = 250;
+
+    if(!isRequired(message)){
+        showError(messageEl, 'Message cannot be empty!');
+    } else if(!isBetween(message.length, min, max)){
+        showError(messageEl, `Message must be between ${min} and ${max} characters!`);
+    } else {
+        showSuccess(messageEl);
+        valid = true;
     }
-  }, 6000);
 
-  // Optional: allow closing on Esc or click (useful for development)
-  function devClose(e){
-    if (e.key === 'Escape'){
-      hideLoader();
-      window.removeEventListener('keydown', devClose);
+    return valid;
+}
+
+
+form.addEventListener('input', debounce(function(e) {
+   switch(e.target.id){
+        case "name":
+            checkName();
+            break;
+        case "email":
+              checkEmail();
+              break;
+        case "message":
+            checkMessage();
+            break;  
+   }
+}));
+
+
+form.addEventListener('submit', function (e){
+
+    e.preventDefault(); //preventing default submission
+
+
+    const isFormValid = checkName() && checkEmail() && checkMessage();
+
+    if(isFormValid){
+        form.submit();
     }
-  }
-  window.addEventListener('keydown', devClose);
-  overlay.addEventListener('click', hideLoader);
-})();
+});;
 
 
 // Mobile hamburger toggle

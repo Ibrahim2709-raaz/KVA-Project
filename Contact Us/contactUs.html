@@ -50,8 +50,8 @@
                         
                         <div class="form_group">
                             <label for="name"> Name*</label>
-                            <input type="text" name="name" id="name" placeholder="Your name" class="contact-info" required minlength="3" oninput="checkName()"/>
-                            <span></span>
+                            <input type="text" name="name" id="name" placeholder="Your name" class="contact-info" required minlength="3" />
+                            <small></small>
                         </div>
 
                         <div class="form_group">
@@ -60,7 +60,7 @@
                                 <option value="Youth Club Boys">Youth Club Boys </option>
                                 <option value="Youth Club Girls">Youth Club Girls</option>
                                 <option value="Adult Club">Adult Club</option>
-                                <ooption value="Ladies">Ladies ONLY </ooption>
+                                <option value="Ladies">Ladies ONLY </option>
                                 <option value="Join Kva" selected>Join KVA</option>
                                 <option value="Feedback">Feedback</option>
                             </select>
@@ -68,14 +68,14 @@
 
                         <div class="form_group">
                             <label for="email"> Email*</label>
-                            <input type="email"  oninput="checkEmail()" name="email" id="email" placeholder="Your email adress" class="contact-info" required>
-                            <span class="error" id="emailError"></span>
+                            <input type="email"  name="email" id="email" placeholder="Your email adress" class="contact-info" required>
+                            <small></small>
                         </div>
 
                         <div class="form_group">
                             <label for="message"> Message*</label>
-                            <textarea name="message" oninput="checkMessage()" placeholder="Please enter your message here." col="10" rows="10" minlength ="20" maxlength="250"  required ></textarea>
-                            <span class="error" id="messageError"></span>
+                            <textarea name="message" id="message" placeholder="Please enter your message here." col="10" rows="10" minlength ="20" maxlength="250"  required ></textarea>
+                            <small></small>
                         </div>
 
                         <div class="form_group" id="buttons">
@@ -128,19 +128,6 @@ Whether you have just been thinking of coaching or coaching for many years we wa
 </footer>
 
 <script src="contactUs.js"></script>
-<script>
-// Mobile hamburger toggle
- const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-
-    // Update accessibility attribute
-    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", !expanded);
-  });
-
-</script>
 </body>
 </html>
