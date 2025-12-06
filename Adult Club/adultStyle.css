@@ -462,4 +462,7 @@ section .grid-container:nth-child(odd){
     text-shadow: #dc7f05;
 
 }
+footer a img {
+  vertical-align: middle;
+}
 
