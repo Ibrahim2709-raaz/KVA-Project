@@ -392,3 +392,6 @@ body.is-loading{
   .ring-fg{ animation: none; stroke-dashoffset: 0; }
   .loader-overlay{ transition: opacity .1s linear; }
 }
+footer a img {
+  vertical-align: middle;
+}
