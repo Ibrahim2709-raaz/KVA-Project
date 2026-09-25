@@ -273,6 +273,8 @@ p {
 .hero-art img {
   position: relative;
   width: min(470px, 92%);
+  height: auto;
+  object-fit: contain;
   filter: drop-shadow(0 28px 55px rgba(0, 0, 0, 0.45));
 }
 
