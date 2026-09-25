@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ibrahim2709-raaz.github.io/KVA-Project/sitemap.xml

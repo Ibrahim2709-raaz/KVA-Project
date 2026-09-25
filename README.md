@@ -1,61 +1,75 @@
 # Kamloops Volleyball Association Website
 
-A responsive, multi-page website concept for the Kamloops Volleyball Association. It gives players and families a clear way to explore programs, learn about the organization, view club media, and find contact information.
+A fast, accessible, multi-page website for the Kamloops Volleyball Association (KVA). The site helps youth athletes, adult players, families, coaches, and community partners find the right volleyball opportunity in Kamloops.
 
-## Features
+## Live site
 
-- Youth and adult volleyball program pages
-- About and contact sections
-- Image gallery
-- Responsive navigation with a mobile menu
-- Animated loading screen and scroll-reveal effects
-- Reusable styling for site-wide navigation and footer elements
+[ibrahim2709-raaz.github.io/KVA-Project](https://ibrahim2709-raaz.github.io/KVA-Project/)
 
-## Built with
+## Highlights
 
-- HTML5
-- CSS3
-- JavaScript
+- Consistent, responsive design system across all pages
+- Youth program and tryout guidance
+- Adult league and division information
+- Optimized photo and video gallery
+- Accessible contact form with native and enhanced validation
+- Keyboard-friendly navigation, skip links, visible focus states, and reduced-motion support
+- Search-friendly titles, descriptions, `robots.txt`, sitemap, and custom 404 page
+- Zero-build static architecture for reliable GitHub Pages hosting
+
+## Technology
+
+- Semantic HTML5
+- Modern CSS with custom properties, grid, flexbox, and responsive layouts
+- Vanilla JavaScript with progressive enhancement
+- Web3Forms for contact form delivery
+- GitHub Pages for hosting and deployment
+
+The project intentionally avoids a framework. For a content-focused site of this size, static HTML, shared CSS, and a small JavaScript file provide excellent performance, accessibility, and maintainability without a build pipeline or runtime dependency.
 
 ## Project structure
 
 ```text
 KVA-Project/
-├── About Us/         # Organization information
-├── Adult Club/       # Adult program content
-├── Contact Us/       # Contact page
-├── Gallery/          # Club gallery
-├── Images/           # Logos and site imagery
-├── Youth club/       # Youth program content
-├── index.html        # Main landing page
-├── style.css         # Main styles
-├── footer.css        # Shared footer styles
-└── script.js         # Navigation and animation behavior
+├── assets/
+│   ├── site.css           # Shared design system and responsive styles
+│   └── site.js            # Navigation, reveal, slider, and form behavior
+├── About Us/              # Organization story and values
+├── Adult Club/            # Adult league information
+├── Contact Us/            # Contact form and details
+├── Gallery/               # Photos and videos
+├── Images/                # Shared image assets
+├── Youth club/            # Youth program and tryout information
+├── 404.html               # Branded not-found page
+├── index.html             # Homepage
+├── robots.txt             # Search crawler guidance
+└── sitemap.xml            # Public page index
 ```
 
 ## Run locally
 
-No build process is required.
+Clone the repository and serve the project root with any static web server:
 
-1. Clone the repository:
+```bash
+git clone https://github.com/Ibrahim2709-raaz/KVA-Project.git
+cd KVA-Project
+python -m http.server 8000
+```
 
-   ```bash
-   git clone https://github.com/Ibrahim2709-raaz/KVA-Project.git
-   ```
+Then open `http://localhost:8000`.
 
-2. Open `index.html` in a browser, or serve the directory with a local development server.
+## Content maintenance
 
-## What I practiced
+- Shared styles belong in `assets/site.css`.
+- Shared interaction behavior belongs in `assets/site.js`.
+- Keep season-specific dates, fees, and availability current before publishing them.
+- Add descriptive alternative text to meaningful images.
+- Compress new images and prefer broadly supported MP4 video for web delivery.
+- Test navigation and forms with both keyboard and mobile layouts.
 
-- Structuring a multi-page website
-- Building responsive navigation
-- Organizing reusable CSS and JavaScript
-- Designing content around distinct user groups
-- Adding accessible labels and progressive visual effects
+## Deployment
 
-## Status
-
-This is a front-end project. Future improvements could include a program-registration flow, content management, form handling, and performance and accessibility testing.
+The `main` branch deploys automatically through GitHub Pages. After a merge or direct update, verify the latest Pages workflow and then check the live site.
 
 ## Author
 
